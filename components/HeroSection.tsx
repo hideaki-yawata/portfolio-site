@@ -47,7 +47,7 @@ export function HeroPanel({
   return (
     <a
       href={href}
-      className="relative flex min-h-[233px] flex-1 flex-col items-center justify-center overflow-hidden md:min-h-[200px] xl:min-h-[800px]"
+      className="relative flex min-h-0 flex-1 flex-col items-center justify-center overflow-hidden"
     >
       <Image
         src={imageSrc.mobile}
@@ -101,7 +101,7 @@ export function HeroPanel({
 
 export function HeroSection() {
   return (
-    <section className="flex w-full flex-col xl:flex-row">
+    <section className="flex h-screen w-full flex-col xl:flex-row">
       <HeroPanel
         title="WEB DESIGN"
         imageSrc={images.heroWebDesign}

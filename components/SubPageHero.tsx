@@ -8,7 +8,7 @@ type SubPageHeroProps = {
 
 export function SubPageHero({ title, imageSrc }: SubPageHeroProps) {
   return (
-    <section className="relative flex h-[200px] w-full items-center px-4 xl:px-[120px]">
+    <section className="relative flex h-screen w-full items-center px-4 xl:px-[120px]">
       <Image
         src={imageSrc.mobile}
         alt=""
