@@ -1,65 +1,97 @@
-import Image from "next/image";
+import { ContactSection } from "@/components/ContactSection";
+import { HeroSection } from "@/components/HeroSection";
+import { PhotoCategoryGallery } from "@/components/PhotoCategoryGallery";
+import { SectionHeading } from "@/components/SectionHeading";
+import { SiteFooter } from "@/components/SiteFooter";
+import { SiteHeader } from "@/components/SiteHeader";
+import { TimelineList } from "@/components/TimelineList";
+import { WorkCard } from "@/components/WorkCard";
+import {
+  photoCategories,
+  timelineEntries,
+  webDesignWorks,
+  webDevelopmentWorks,
+} from "@/lib/topPageData";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="flex flex-col bg-background text-text">
+      <div className="relative">
+        <SiteHeader />
+        <HeroSection />
+      </div>
+
+      <section
+        id="web-design"
+        className="flex justify-center bg-background px-4 py-8 xl:px-[120px] xl:py-16"
+      >
+        <div className="flex w-full max-w-[1200px] flex-col gap-6 md:gap-8">
+          <SectionHeading
+            number="01"
+            title="Web Design"
+            description="I deliver design data optimized for Design-to-Code."
+            alignEnd
+          />
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+            {webDesignWorks.map((work, index) => (
+              <WorkCard key={`web-design-${index}`} work={work} />
+            ))}
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      <section
+        id="web-development"
+        className="flex justify-center bg-sub-background px-4 py-8 xl:px-[120px] xl:py-16"
+      >
+        <div className="flex w-full max-w-[1200px] flex-col gap-6 md:gap-8">
+          <SectionHeading
+            number="02"
+            title="Web Development / Maintenance"
+            description="I handle coding, CMS integration, maintenance, and operations."
+            viewAllHref="/web"
+            alignEnd
+          />
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+            {webDevelopmentWorks.map((work, index) => (
+              <WorkCard key={`web-development-${index}`} work={work} />
+            ))}
+          </div>
         </div>
-      </main>
+      </section>
+
+      <section
+        id="photography"
+        className="flex justify-center bg-background px-4 py-8 xl:px-[120px] xl:py-16"
+      >
+        <div className="flex w-full max-w-[1200px] flex-col gap-6 md:gap-8">
+          <SectionHeading
+            number="03"
+            title="Photography"
+            description="I photograph essential visual assets for websites, including spaces and products."
+            viewAllHref="/photo"
+            alignEnd
+          />
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-x-2 md:gap-y-4 xl:grid-cols-2 xl:gap-x-2 xl:gap-y-4">
+            {photoCategories.map((category) => (
+              <PhotoCategoryGallery key={category.title} category={category} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="background"
+        className="flex justify-center bg-sub-background px-4 py-8 xl:px-[120px] xl:py-16"
+      >
+        <div className="flex w-full max-w-[1200px] flex-col gap-6 md:gap-8 xl:gap-20">
+          <SectionHeading number="04" title="Background" />
+          <TimelineList entries={timelineEntries} />
+        </div>
+      </section>
+
+      <ContactSection />
+      <SiteFooter />
     </div>
   );
 }
