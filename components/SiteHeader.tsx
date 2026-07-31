@@ -9,13 +9,13 @@ export function SiteHeader() {
       <div className="flex h-12 w-full max-w-[1200px] items-center justify-between md:h-[60px]">
         <Link
           href="/"
-          className="text-xs font-bold leading-[1.5] md:text-base"
+          className="text-base font-bold leading-[1.5] xl:text-xl"
         >
           Hideaki Yawata Portfolio Site
         </Link>
 
         <nav
-          className="hidden items-center gap-4 text-xs leading-[1.5] md:flex"
+          className="hidden items-center gap-4 text-xs leading-[1.5] md:flex xl:text-base"
           aria-label="Main"
         >
           {navItems.map((item) => (
