@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { IconImage } from "@/components/IconImage";
 import { images } from "@/lib/images";
 import type { TimelineEntry } from "@/types/work";
 
@@ -11,9 +11,8 @@ function TimelineEntryTablet({ entry }: { entry: TimelineEntry }) {
     <div className="relative flex min-w-0 flex-col pt-[7px] pb-0.5">
       <div className="relative w-full">
         <span className="block h-px w-full bg-accent" aria-hidden />
-        <Image
+        <IconImage
           src={images.icons.timelineDot}
-          alt=""
           width={8}
           height={8}
           className="absolute left-0 top-1"
@@ -32,9 +31,8 @@ function TimelineEntryDesktop({ entry }: { entry: TimelineEntry }) {
     <div className="relative flex min-w-0 flex-col pt-[7px] pb-0.5">
       <div className="relative w-full">
         <span className="block h-px w-full bg-accent" aria-hidden />
-        <Image
+        <IconImage
           src={images.icons.timelineDot}
-          alt=""
           width={16}
           height={16}
           className="absolute left-0 top-0"
@@ -55,9 +53,8 @@ export function TimelineList({ entries }: TimelineListProps) {
         {entries.map((entry, index) => (
           <div key={entry.period} className="relative flex items-start">
             <div className="mr-4 flex w-2 shrink-0 flex-col items-center">
-              <Image
+              <IconImage
                 src={images.icons.timelineDot}
-                alt=""
                 width={8}
                 height={8}
                 className="relative -left-[3.5px]"

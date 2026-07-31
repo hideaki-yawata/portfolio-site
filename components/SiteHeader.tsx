@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
+import { IconImage } from "@/components/IconImage";
 import { images } from "@/lib/images";
 import { navItems } from "@/lib/topPageData";
 
@@ -35,11 +35,11 @@ export function SiteHeader() {
           className="relative h-4 w-6 md:hidden"
           aria-label="Open menu"
         >
-          <Image
+          <IconImage
             src={images.icons.hamburger}
-            alt=""
-            fill
-            className="object-contain"
+            width={24}
+            height={16}
+            className="h-full w-full object-contain"
           />
         </button>
       </div>

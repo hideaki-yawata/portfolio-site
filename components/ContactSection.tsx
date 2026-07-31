@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { IconImage } from "@/components/IconImage";
 import { images } from "@/lib/images";
 
 export function ContactSection() {
@@ -22,16 +23,14 @@ export function ContactSection() {
               className="inline-flex w-full items-center gap-2 bg-accent py-0.5 pl-3 pr-2 text-base font-bold italic leading-[1.5] text-background md:py-1 md:pl-4 md:pr-2 md:text-2xl xl:justify-between"
             >
               Contact Me
-              <Image
+              <IconImage
                 src={images.icons.contactCtaArrow}
-                alt=""
                 width={24}
                 height={24}
                 className="md:hidden"
               />
-              <Image
+              <IconImage
                 src={images.icons.contactArrow}
-                alt=""
                 width={30}
                 height={30}
                 className="hidden shrink-0 rotate-90 md:inline"
@@ -40,18 +39,16 @@ export function ContactSection() {
 
             <div className="flex items-center gap-2">
               <Link href="https://www.linkedin.com" aria-label="LinkedIn">
-                <Image
+                <IconImage
                   src={images.icons.linkedin}
-                  alt=""
                   width={16}
                   height={16}
                   className="md:h-6 md:w-6"
                 />
               </Link>
               <Link href="https://github.com" aria-label="GitHub">
-                <Image
+                <IconImage
                   src={images.icons.github}
-                  alt=""
                   width={16}
                   height={16}
                   className="md:h-6 md:w-6"

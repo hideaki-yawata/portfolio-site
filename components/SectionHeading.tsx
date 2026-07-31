@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
+import { IconImage } from "@/components/IconImage";
 import { images } from "@/lib/images";
 
 type SectionHeadingProps = {
@@ -24,11 +24,10 @@ export function SectionHeading({
       <div className="flex w-full flex-col gap-4 md:gap-6">
         <div className="flex items-start gap-4 md:items-end">
           <div className="relative flex shrink-0 items-center gap-2.5">
-            <Image
+            <IconImage
               src={images.icons.sectionHighlight}
-              alt=""
-              width={60}
-              height={32}
+              width={41}
+              height={22}
               className="absolute -left-1 top-0 h-[22px] w-[41px] md:-left-2 md:h-8 md:w-[60px]"
             />
             <span className="relative text-[36px] font-bold italic leading-none text-accent md:text-[48px]">
@@ -52,9 +51,8 @@ export function SectionHeading({
           className="inline-flex items-end gap-0.5 border-b border-accent text-xs font-bold italic leading-[1.5] text-accent md:text-base xl:self-start"
         >
           View All Work
-          <Image
+          <IconImage
             src={images.icons.viewAllArrow}
-            alt=""
             width={16}
             height={16}
             className="rotate-90 md:h-[22px] md:w-[22px]"

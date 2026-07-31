@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
+import { IconImage } from "@/components/IconImage";
 import { images } from "@/lib/images";
 
 type BreadcrumbProps = {
@@ -16,9 +16,8 @@ export function Breadcrumb({ currentMobile, currentTablet }: BreadcrumbProps) {
       <Link href="/" className="shrink-0 font-normal text-accent">
         Home
       </Link>
-      <Image
+      <IconImage
         src={images.icons.breadcrumbSeparator}
-        alt=""
         width={8}
         height={8}
         className="mx-1 size-2 shrink-0 md:mx-0 md:size-3"

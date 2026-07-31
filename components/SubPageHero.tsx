@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { subPageHeroFillSizes } from "@/lib/imageSizes";
 
 type SubPageHeroProps = {
   title: string;
@@ -14,7 +15,7 @@ export function SubPageHero({ title, imageSrc }: SubPageHeroProps) {
         fill
         className="object-cover md:hidden"
         priority
-        sizes="100vw"
+        sizes={subPageHeroFillSizes.mobile}
       />
       <Image
         src={imageSrc.tablet}
@@ -22,7 +23,7 @@ export function SubPageHero({ title, imageSrc }: SubPageHeroProps) {
         fill
         className="hidden object-cover md:block xl:hidden"
         priority
-        sizes="100vw"
+        sizes={subPageHeroFillSizes.tablet}
       />
       <Image
         src={imageSrc.desktop}
@@ -30,7 +31,7 @@ export function SubPageHero({ title, imageSrc }: SubPageHeroProps) {
         fill
         className="hidden object-cover xl:block"
         priority
-        sizes="100vw"
+        sizes={subPageHeroFillSizes.desktop}
       />
       <span
         className="pointer-events-none absolute inset-0 bg-[rgba(44,44,42,0.25)]"
