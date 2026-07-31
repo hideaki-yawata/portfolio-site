@@ -1,11 +1,32 @@
+"use client";
+
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { IconImage } from "@/components/IconImage";
 import { images } from "@/lib/images";
 import { navItems } from "@/lib/topPageData";
 
 export function SiteHeader() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => {
+      setScrolled(window.scrollY > 0);
+    };
+
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <header className="absolute inset-x-0 top-0 z-50 flex h-12 items-center px-4 py-0 text-background md:justify-center xl:h-[60px] xl:px-[120px]">
+    <header
+      className={`fixed inset-x-0 top-0 z-50 flex h-12 items-center px-4 py-0 transition-colors md:justify-center xl:h-[60px] xl:px-[120px] ${
+        scrolled
+          ? "bg-background text-text shadow-[0_1px_0_0_var(--sub-background)]"
+          : "bg-transparent text-background"
+      }`}
+    >
       <div className="flex h-full w-full max-w-[1200px] items-center justify-between">
         <Link
           href="/"
@@ -40,9 +61,10 @@ export function SiteHeader() {
         >
           <IconImage
             src={images.icons.hamburger}
+            alt=""
             width={24}
             height={16}
-            className="h-full w-full object-contain"
+            className={`h-full w-full object-contain ${scrolled ? "invert" : ""}`}
           />
         </button>
       </div>
