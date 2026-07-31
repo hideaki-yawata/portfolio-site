@@ -66,8 +66,8 @@ export const timelineEntries: TimelineEntry[] = [
 
 export const navItems = [
   { label: "Web Design", href: "/#web-design" },
-  { label: "Web Development", href: "/#web-development" },
-  { label: "Photography", href: "/#photography" },
+  { label: "Web Development", href: "/web-development" },
+  { label: "Photography", href: "/photography" },
   { label: "Background", href: "/#background" },
   { label: "Contact", href: "/#contact", emphasized: true },
 ] as const;
