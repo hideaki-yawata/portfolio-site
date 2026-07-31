@@ -1,0 +1,13 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Breadcrumb Separator">
+<mask id="mask0_0_142" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="8" height="8">
+<path id="Decorative Shape/Background" d="M0 0H8V8H0V0Z" fill="#D9D9D9"/>
+</mask>
+<g mask="url(#mask0_0_142)">
+<g id="Decorative Shape/Pattern">
+<path id="Inner Shape (Stroke)" d="M6.43804 4.00005L2.6668 7.77129L2.1954 7.29988L5.96663 3.52865L6.43804 4.00005Z" fill="#2C2C2A"/>
+<path id="Inner Shape (Stroke)_2" d="M2.66672 0.228954L6.43795 4.00019L5.96655 4.47159L2.19531 0.700358L2.66672 0.228954Z" fill="#2C2C2A"/>
+</g>
+</g>
+</g>
+</svg>
