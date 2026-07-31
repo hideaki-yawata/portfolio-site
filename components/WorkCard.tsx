@@ -19,11 +19,16 @@ export function WorkCard({ work, listing }: WorkCardProps) {
     : "relative aspect-[384/210] w-full overflow-hidden md:aspect-[356/254] xl:aspect-[384/210]";
 
   return (
-    <article className="flex flex-col gap-2">
+    <a
+      href={work.href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex flex-col gap-2"
+    >
       <div className={thumbnailClassName}>
         <Image
           src={work.imageSrc}
-          alt={work.title}
+          alt=""
           fill
           className="object-cover"
           sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 384px"
@@ -44,6 +49,6 @@ export function WorkCard({ work, listing }: WorkCardProps) {
           ))}
         </ul>
       </div>
-    </article>
+    </a>
   );
 }

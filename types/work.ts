@@ -9,6 +9,8 @@ export type WorkItem = {
   title: string;
   imageSrc: string;
   tags: WorkTag[];
+  /** External project URL */
+  href: string;
 };
 
 export type PhotoCategory = {

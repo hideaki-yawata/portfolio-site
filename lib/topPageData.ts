@@ -7,23 +7,30 @@ const sampleWorkTags: WorkItem["tags"] = [
   { label: "WordPress", variant: "subAccent2" },
 ];
 
-export const webDesignWorks: WorkItem[] = Array.from({ length: 3 }, () => ({
+const sampleWorkBase = {
   title: "Japan Mobility Data Space",
   imageSrc: images.workThumbnail,
   tags: sampleWorkTags,
-}));
+} as const;
 
-export const webDevelopmentWorks: WorkItem[] = Array.from({ length: 6 }, () => ({
-  title: "Japan Mobility Data Space",
-  imageSrc: images.workThumbnail,
-  tags: sampleWorkTags,
-}));
+/** Replace with real project URLs (microCMS or static data). */
+const sampleWorkHref = "https://example.com";
 
-export const webPortfolioWorks: WorkItem[] = Array.from({ length: 10 }, () => ({
-  title: "Japan Mobility Data Space",
-  imageSrc: images.workThumbnail,
-  tags: sampleWorkTags,
-}));
+function sampleWork(): WorkItem {
+  return { ...sampleWorkBase, href: sampleWorkHref };
+}
+
+export const webDesignWorks: WorkItem[] = Array.from({ length: 3 }, sampleWork);
+
+export const webDevelopmentWorks: WorkItem[] = Array.from(
+  { length: 6 },
+  sampleWork,
+);
+
+export const webPortfolioWorks: WorkItem[] = Array.from(
+  { length: 10 },
+  sampleWork,
+);
 
 export const photoCategories: PhotoCategory[] = [
   { title: "Coworking Space", images: [images.photoSample, images.photoSample] },
