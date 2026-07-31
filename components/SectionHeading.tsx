@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { IconImage } from "@/components/IconImage";
+import { plusJakartaItalic } from "@/lib/fonts";
 import { images } from "@/lib/images";
 
 type SectionHeadingProps = {
@@ -30,7 +31,9 @@ export function SectionHeading({
               height={22}
               className="absolute -left-1 top-0 h-[22px] w-[41px] md:-left-2 md:h-8 md:w-[60px]"
             />
-            <span className="relative text-[36px] font-bold italic leading-none text-accent md:text-[48px]">
+            <span
+              className={`${plusJakartaItalic.className} relative text-[36px] font-bold leading-none text-accent md:text-[48px]`}
+            >
               {number}
             </span>
           </div>
@@ -48,7 +51,7 @@ export function SectionHeading({
       {viewAllHref ? (
         <Link
           href={viewAllHref}
-          className="inline-flex items-end gap-0.5 border-b border-accent text-xs font-bold italic leading-[1.5] text-accent md:text-base xl:self-start"
+          className={`${plusJakartaItalic.className} inline-flex items-end gap-0.5 border-b border-accent text-xs font-bold leading-[1.5] text-accent md:text-base xl:self-start`}
         >
           View All Work
           <IconImage

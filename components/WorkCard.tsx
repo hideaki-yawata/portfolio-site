@@ -37,7 +37,7 @@ export function WorkCard({ work, listing }: WorkCardProps) {
           {work.tags.map((tag) => (
             <li
               key={tag.label}
-              className={`px-1 text-xs font-bold leading-[1.5] text-background ${tagClassName[tag.variant]} ${tag.variant === "subAccent1" ? "font-[family-name:var(--font-inter)]" : ""}`}
+              className={`px-1 text-xs font-bold leading-[1.5] text-background ${tagClassName[tag.variant]}`}
             >
               {tag.label}
             </li>

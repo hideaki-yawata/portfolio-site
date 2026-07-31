@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { IconImage } from "@/components/IconImage";
+import { plusJakartaItalic } from "@/lib/fonts";
 import { images } from "@/lib/images";
 
 export function ContactSection() {
@@ -20,7 +21,7 @@ export function ContactSection() {
           <div className="flex w-full max-w-[358px] flex-col items-end gap-4 md:w-[200px] xl:items-start">
             <Link
               href="mailto:hello@example.com"
-              className="inline-flex w-full items-center gap-2 bg-accent py-0.5 pl-3 pr-2 text-base font-bold italic leading-[1.5] text-background md:py-1 md:pl-4 md:pr-2 md:text-2xl xl:justify-between"
+              className={`${plusJakartaItalic.className} inline-flex w-full items-center gap-2 bg-accent py-0.5 pl-3 pr-2 text-base font-bold leading-[1.5] text-background md:py-1 md:pl-4 md:pr-2 md:text-2xl xl:justify-between`}
             >
               Contact Me
               <IconImage
