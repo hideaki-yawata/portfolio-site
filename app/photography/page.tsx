@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   description: "Photography portfolio by category",
 };
 
-export default function PhotoPage() {
+export default function PhotographyPage() {
   return (
     <div className="flex min-h-full flex-col bg-background text-text">
       <div className="relative">

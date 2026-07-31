@@ -49,7 +49,7 @@ export default function Home() {
             number="02"
             title="Web Development / Maintenance"
             description="I handle coding, CMS integration, maintenance, and operations."
-            viewAllHref="/web"
+            viewAllHref="/web-development"
             alignEnd
           />
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
@@ -69,7 +69,7 @@ export default function Home() {
             number="03"
             title="Photography"
             description="I photograph essential visual assets for websites, including spaces and products."
-            viewAllHref="/photo"
+            viewAllHref="/photography"
             alignEnd
           />
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-x-2 md:gap-y-4 xl:grid-cols-2 xl:gap-x-2 xl:gap-y-4">

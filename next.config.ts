@@ -8,14 +8,6 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: projectRoot,
   },
-  async rewrites() {
-    return [
-      {
-        source: "/web",
-        destination: "/web-development",
-      },
-    ];
-  },
   images: {
     remotePatterns: [
       {
