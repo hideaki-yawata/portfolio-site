@@ -47,7 +47,7 @@ export default function Home() {
         <div className="flex w-full max-w-[1200px] flex-col gap-6 md:gap-8">
           <SectionHeading
             number="02"
-            title="Web Development / Maintenance"
+            title="Web Development"
             description="I handle coding, CMS integration, maintenance, and operations."
             viewAllHref="/web-development"
             alignEnd

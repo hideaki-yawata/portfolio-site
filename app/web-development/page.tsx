@@ -19,7 +19,7 @@ export default function WebDevelopmentPage() {
       <div className="relative">
         <SiteHeader />
         <SubPageHero
-          title="Web Development / Maintenance"
+          title="Web Development"
           imageSrc={images.webSubHero}
         />
       </div>
@@ -28,7 +28,7 @@ export default function WebDevelopmentPage() {
         <div className="mx-auto flex w-full max-w-[1200px] flex-col gap-8 xl:gap-12">
           <Breadcrumb
             currentMobile="Web Design / Development"
-            currentTablet="Web Development / Maintenance"
+            currentTablet="Web Development"
           />
 
           <div className="flex flex-col items-center gap-12 xl:gap-16">
