@@ -5,8 +5,8 @@ import { navItems } from "@/lib/topPageData";
 
 export function SiteHeader() {
   return (
-    <header className="absolute inset-x-0 top-0 z-50 flex items-center justify-between px-4 py-[15px] text-background md:justify-center md:px-4 md:py-0 xl:px-[120px]">
-      <div className="flex h-12 w-full max-w-[1200px] items-center justify-between md:h-[60px]">
+    <header className="absolute inset-x-0 top-0 z-50 flex h-12 items-center px-4 py-0 text-background md:justify-center xl:h-[60px] xl:px-[120px]">
+      <div className="flex h-full w-full max-w-[1200px] items-center justify-between">
         <Link
           href="/"
           className="text-base font-bold leading-[1.5] xl:text-xl"
