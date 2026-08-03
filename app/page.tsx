@@ -1,6 +1,6 @@
 import { ContactSection } from "@/components/ContactSection";
 import { HeroSection } from "@/components/HeroSection";
-import { PhotoCategoryGallery } from "@/components/PhotoCategoryGallery";
+import { PhotographyGalleries } from "@/components/PhotographyGalleries";
 import { SectionHeading } from "@/components/SectionHeading";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -72,11 +72,10 @@ export default function Home() {
             viewAllHref="/photography"
             alignEnd
           />
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-x-2 md:gap-y-4 xl:grid-cols-2 xl:gap-x-2 xl:gap-y-4">
-            {photoCategories.map((category) => (
-              <PhotoCategoryGallery key={category.title} category={category} />
-            ))}
-          </div>
+          <PhotographyGalleries
+            categories={photoCategories}
+            gridClassName="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-x-2 md:gap-y-4 xl:grid-cols-2 xl:gap-x-2 xl:gap-y-4"
+          />
         </div>
       </section>
 

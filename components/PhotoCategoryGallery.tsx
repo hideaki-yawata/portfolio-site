@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import type { PhotoCategory } from "@/types/work";
 
@@ -5,11 +7,13 @@ type PhotoCategoryGalleryProps = {
   category: PhotoCategory;
   /** 下層Photo一覧（Figma Photo mobile 等） */
   subPage?: boolean;
+  onOpenPhoto: (indexInCategory: number) => void;
 };
 
 export function PhotoCategoryGallery({
   category,
   subPage,
+  onOpenPhoto,
 }: PhotoCategoryGalleryProps) {
   const titleClassName = subPage
     ? "text-2xl font-bold leading-[1.5] text-text md:text-2xl"
@@ -26,18 +30,21 @@ export function PhotoCategoryGallery({
       <h3 className={titleClassName}>{category.title}</h3>
       <div className={gridClassName}>
         {category.images.map((src, index) => (
-          <div
+          <button
             key={`${category.title}-${index}`}
-            className={imageWrapperClassName}
+            type="button"
+            className={`${imageWrapperClassName} cursor-pointer border-0 bg-transparent p-0`}
+            aria-label={`View ${category.title} ${index + 1}`}
+            onClick={() => onOpenPhoto(index)}
           >
             <Image
               src={src}
-              alt={`${category.title} ${index + 1}`}
+              alt=""
               fill
               className="object-cover"
               sizes="(max-width: 767px) 50vw, (max-width: 1279px) 50vw, 294px"
             />
-          </div>
+          </button>
         ))}
       </div>
     </div>

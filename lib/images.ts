@@ -41,5 +41,8 @@ export const images = {
     timelineDot: "/images/icons/timeline-dot.svg",
     breadcrumbSeparator: "/images/icons/breadcrumb-separator.svg",
     homeLinkArrow: "/images/icons/home-link-arrow.svg",
+    modalClose: "/images/icons/modal-close.svg",
+    modalArrowPrev: "/images/icons/modal-arrow-prev.svg",
+    modalArrowNext: "/images/icons/modal-arrow-next.svg",
   },
 } as const;
