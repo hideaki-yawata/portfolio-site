@@ -50,11 +50,6 @@ export const timelineEntries: TimelineEntry[] = [
       "Completed the German B2 course at VICTORIA | Academy of Languages in Berlin.",
   },
   {
-    period: "2024-2025",
-    description:
-      "Worked as a manager at API BECI City Campus language school in the Philippines, overseeing student management and photography for website and social media content.",
-  },
-  {
     period: "2020-Present",
     description:
       "Started a career as a freelance web engineer and designer. Involved in the development and maintenance of numerous WordPress sites.",

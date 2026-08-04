@@ -38,7 +38,6 @@ export const images = {
     contactCtaArrow: "/images/icons/contact-cta-arrow.svg",
     linkedin: "/images/icons/linkedin.svg",
     github: "/images/icons/github.svg",
-    timelineDot: "/images/icons/timeline-dot.svg",
     breadcrumbSeparator: "/images/icons/breadcrumb-separator.svg",
     homeLinkArrow: "/images/icons/home-link-arrow.svg",
     modalClose: "/images/icons/modal-close.svg",
