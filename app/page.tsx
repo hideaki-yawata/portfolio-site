@@ -83,7 +83,7 @@ export default function Home() {
         id="background"
         className="flex justify-center bg-sub-background px-4 py-8 xl:px-[120px] xl:py-16"
       >
-        <div className="flex w-full max-w-[1200px] flex-col gap-6 md:gap-8 xl:gap-20">
+        <div className="flex w-full max-w-[1200px] flex-col gap-6 md:gap-8">
           <SectionHeading number="04" title="Background" />
           <TimelineList entries={timelineEntries} />
         </div>
