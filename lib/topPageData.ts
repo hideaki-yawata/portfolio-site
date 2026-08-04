@@ -62,7 +62,7 @@ export const timelineEntries: TimelineEntry[] = [
   {
     period: "2009",
     description:
-      "Graduated from Kanazawa Gakuin University, Department of Fine Arts and Crafts, majoring in Western Painting.",
+      "Graduated from Kanazawa Gakuin University, Department of Fine Arts and Crafts, majoring in Oil Painting.",
   },
 ];
 
