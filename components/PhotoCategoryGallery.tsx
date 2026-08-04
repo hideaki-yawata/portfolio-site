@@ -22,7 +22,7 @@ export function PhotoCategoryGallery({
   const gridClassName = "grid grid-cols-2 gap-2";
 
   const imageWrapperClassName =
-    "relative aspect-[4/3] w-full overflow-hidden";
+    "relative aspect-[3/2] w-full overflow-hidden";
 
   return (
     <div className={`flex flex-col ${subPage ? "gap-2" : "gap-1 md:gap-2"}`}>
