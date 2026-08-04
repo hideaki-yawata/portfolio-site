@@ -9,14 +9,10 @@ const tagClassName: Record<WorkTagVariant, string> = {
 
 type WorkCardProps = {
   work: WorkItem;
-  /** 下層Web一覧は全ブレークポイントで 384×210（Figma Web Gallery） */
-  listing?: boolean;
 };
 
-export function WorkCard({ work, listing }: WorkCardProps) {
-  const thumbnailClassName = listing
-    ? "relative aspect-[384/210] w-full overflow-hidden"
-    : "relative aspect-[384/210] w-full overflow-hidden md:aspect-[356/254] xl:aspect-[384/210]";
+export function WorkCard({ work }: WorkCardProps) {
+  const thumbnailClassName = "relative aspect-[64/35] w-full overflow-hidden";
 
   return (
     <a

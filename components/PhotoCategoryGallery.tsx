@@ -21,9 +21,8 @@ export function PhotoCategoryGallery({
 
   const gridClassName = "grid grid-cols-2 gap-2";
 
-  const imageWrapperClassName = subPage
-    ? "relative aspect-[294/196] w-full overflow-hidden"
-    : "relative aspect-[175/117] w-full overflow-hidden md:aspect-[364/164] xl:aspect-[294/196]";
+  const imageWrapperClassName =
+    "relative aspect-[4/3] w-full overflow-hidden";
 
   return (
     <div className={`flex flex-col ${subPage ? "gap-2" : "gap-1 md:gap-2"}`}>

@@ -38,7 +38,7 @@ export default function WebDevelopmentPage() {
                   key={`web-portfolio-${index}`}
                   className={index === 9 ? "md:hidden" : undefined}
                 >
-                  <WorkCard work={work} listing />
+                  <WorkCard work={work} />
                 </div>
               ))}
             </div>

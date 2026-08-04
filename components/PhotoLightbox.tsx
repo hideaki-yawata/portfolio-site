@@ -73,7 +73,7 @@ export function PhotoLightbox({
         onClick={onClose}
       />
 
-      <div className="relative z-10 aspect-[2000/1333] w-full max-w-[1200px] shrink-0">
+      <div className="relative z-10 aspect-[4/3] w-full max-w-[1200px] shrink-0">
         <Image
           src={item.src}
           alt={item.alt}
