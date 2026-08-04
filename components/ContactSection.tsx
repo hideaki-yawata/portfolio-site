@@ -3,7 +3,7 @@ import Link from "next/link";
 import { IconImage } from "@/components/IconImage";
 import { plusJakartaItalic } from "@/lib/fonts";
 import { images } from "@/lib/images";
-import { contactFormHref } from "@/lib/topPageData";
+import { contactFormHref, githubHref, linkedInHref } from "@/lib/topPageData";
 
 export function ContactSection() {
   return (
@@ -37,7 +37,7 @@ export function ContactSection() {
 
             <div className="flex items-center gap-2">
               <Link
-                href="https://www.linkedin.com/in/hideaki-yawata-84054b3a5/"
+                href={linkedInHref}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
@@ -50,7 +50,7 @@ export function ContactSection() {
                 />
               </Link>
               <Link
-                href="https://github.com/hideaki-yawata"
+                href={githubHref}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub"

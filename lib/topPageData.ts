@@ -67,6 +67,9 @@ export const timelineEntries: TimelineEntry[] = [
 ];
 
 export const contactFormHref = "https://forms.gle/fndGvnVxW84YJi8T9";
+export const linkedInHref =
+  "https://www.linkedin.com/in/hideaki-yawata-84054b3a5/";
+export const githubHref = "https://github.com/hideaki-yawata";
 
 export const navItems = [
   { label: "Web Design", href: "/#web-design" },

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useEffect } from "react";
 import { IconImage } from "@/components/IconImage";
 import { images } from "@/lib/images";
-import { navItems } from "@/lib/topPageData";
+import { githubHref, linkedInHref, navItems } from "@/lib/topPageData";
 
 type MobileNavMenuProps = {
   open: boolean;
@@ -59,31 +59,64 @@ export function MobileNavMenu({ open, onClose }: MobileNavMenuProps) {
         />
       </button>
 
-      <nav
-        className="flex h-full flex-col items-center justify-center gap-12 text-2xl leading-[1.5] text-text"
-        aria-label="Main"
-      >
-        {navItems.map((item) => (
+      <div className="flex h-full flex-col items-center justify-center">
+        <nav
+          className="flex flex-col items-center gap-12 text-2xl leading-[1.5] text-text"
+          aria-label="Main"
+        >
+          {navItems.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              target={"external" in item && item.external ? "_blank" : undefined}
+              rel={
+                "external" in item && item.external
+                  ? "noopener noreferrer"
+                  : undefined
+              }
+              onClick={onClose}
+              className={
+                "emphasized" in item && item.emphasized
+                  ? "font-bold"
+                  : "font-normal"
+              }
+            >
+              {item.label}
+            </Link>
+          ))}
+        </nav>
+
+        <div className="mt-12 flex items-center gap-2">
           <Link
-            key={item.href}
-            href={item.href}
-            target={"external" in item && item.external ? "_blank" : undefined}
-            rel={
-              "external" in item && item.external
-                ? "noopener noreferrer"
-                : undefined
-            }
+            href={linkedInHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
             onClick={onClose}
-            className={
-              "emphasized" in item && item.emphasized
-                ? "font-bold"
-                : "font-normal"
-            }
           >
-            {item.label}
+            <IconImage
+              src={images.icons.linkedinMenu}
+              width={24}
+              height={24}
+              className="size-6"
+            />
           </Link>
-        ))}
-      </nav>
+          <Link
+            href={githubHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+            onClick={onClose}
+          >
+            <IconImage
+              src={images.icons.githubMenu}
+              width={24}
+              height={24}
+              className="size-6"
+            />
+          </Link>
+        </div>
+      </div>
     </div>
   );
 }
