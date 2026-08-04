@@ -3,11 +3,13 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { IconImage } from "@/components/IconImage";
+import { MobileNavMenu } from "@/components/MobileNavMenu";
 import { images } from "@/lib/images";
 import { navItems } from "@/lib/topPageData";
 
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => {
@@ -58,6 +60,9 @@ export function SiteHeader() {
           type="button"
           className="relative h-4 w-6 md:hidden"
           aria-label="Open menu"
+          aria-expanded={menuOpen}
+          aria-controls="mobile-nav-menu"
+          onClick={() => setMenuOpen(true)}
         >
           <IconImage
             src={images.icons.hamburger}
@@ -68,6 +73,11 @@ export function SiteHeader() {
           />
         </button>
       </div>
+
+      <MobileNavMenu
+        open={menuOpen}
+        onClose={() => setMenuOpen(false)}
+      />
     </header>
   );
 }
