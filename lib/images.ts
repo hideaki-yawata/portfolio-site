@@ -30,6 +30,7 @@ export const images = {
   contactPhoto: "/images/contact-photo.png",
   icons: {
     hamburger: "/images/icons/hamburger.svg",
+    heroArrowMobile: "/images/icons/hero-arrow-mobile.svg",
     heroArrowTablet: "/images/icons/hero-arrow-tablet.svg",
     heroArrowDesktop: "/images/icons/hero-arrow-desktop.svg",
     sectionHighlight: "/images/icons/section-highlight.svg",
