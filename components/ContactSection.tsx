@@ -18,23 +18,17 @@ export function ContactSection() {
             </p>
           </div>
 
-          <div className="flex w-full max-w-[358px] flex-col items-end gap-4 md:w-[200px] xl:items-start">
+          <div className="flex w-fit max-w-full flex-col items-end gap-4 xl:items-start">
             <Link
               href="mailto:hello@example.com"
-              className={`${plusJakartaItalic.className} inline-flex w-full items-center gap-2 bg-accent py-0.5 pl-3 pr-2 text-base font-bold leading-[1.5] text-background md:py-1 md:pl-4 md:pr-2 md:text-2xl xl:justify-between`}
+              className={`${plusJakartaItalic.className} inline-flex w-fit items-center gap-1 bg-accent py-0.5 pl-3 pr-2 text-base font-bold leading-[1.5] text-background md:gap-2 md:py-1 md:pl-4 md:pr-2 md:text-2xl`}
             >
               Contact Me
               <IconImage
-                src={images.icons.contactCtaArrow}
+                src={images.icons.contactArrowUp}
                 width={24}
                 height={24}
-                className="md:hidden"
-              />
-              <IconImage
-                src={images.icons.contactArrow}
-                width={30}
-                height={30}
-                className="hidden shrink-0 rotate-90 md:inline"
+                className="size-6 shrink-0 md:size-[30px]"
               />
             </Link>
 
