@@ -3,6 +3,7 @@ import Link from "next/link";
 import { IconImage } from "@/components/IconImage";
 import { plusJakartaItalic } from "@/lib/fonts";
 import { images } from "@/lib/images";
+import { contactFormHref } from "@/lib/topPageData";
 
 export function ContactSection() {
   return (
@@ -20,7 +21,9 @@ export function ContactSection() {
 
           <div className="flex w-fit max-w-full flex-col items-end gap-4 xl:items-start">
             <Link
-              href="mailto:hello@example.com"
+              href={contactFormHref}
+              target="_blank"
+              rel="noopener noreferrer"
               className={`${plusJakartaItalic.className} inline-flex w-fit items-center gap-1 bg-accent py-0.5 pl-3 pr-2 text-base font-bold leading-[1.5] text-background md:gap-2 md:py-1 md:pl-4 md:pr-2 md:text-2xl`}
             >
               Contact Me
@@ -33,7 +36,12 @@ export function ContactSection() {
             </Link>
 
             <div className="flex items-center gap-2">
-              <Link href="https://www.linkedin.com" aria-label="LinkedIn">
+              <Link
+                href="https://www.linkedin.com/in/hideaki-yawata-84054b3a5/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+              >
                 <IconImage
                   src={images.icons.linkedin}
                   width={16}
@@ -41,7 +49,12 @@ export function ContactSection() {
                   className="md:h-6 md:w-6"
                 />
               </Link>
-              <Link href="https://github.com" aria-label="GitHub">
+              <Link
+                href="https://github.com/hideaki-yawata"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+              >
                 <IconImage
                   src={images.icons.github}
                   width={16}

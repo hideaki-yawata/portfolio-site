@@ -67,6 +67,12 @@ export function MobileNavMenu({ open, onClose }: MobileNavMenuProps) {
           <Link
             key={item.href}
             href={item.href}
+            target={"external" in item && item.external ? "_blank" : undefined}
+            rel={
+              "external" in item && item.external
+                ? "noopener noreferrer"
+                : undefined
+            }
             onClick={onClose}
             className={
               "emphasized" in item && item.emphasized

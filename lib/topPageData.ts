@@ -66,10 +66,17 @@ export const timelineEntries: TimelineEntry[] = [
   },
 ];
 
+export const contactFormHref = "https://forms.gle/fndGvnVxW84YJi8T9";
+
 export const navItems = [
   { label: "Web Design", href: "/#web-design" },
   { label: "Web Development", href: "/web-development" },
   { label: "Photography", href: "/photography" },
   { label: "Background", href: "/#background" },
-  { label: "Contact", href: "/#contact", emphasized: true },
+  {
+    label: "Contact",
+    href: contactFormHref,
+    emphasized: true,
+    external: true,
+  },
 ] as const;

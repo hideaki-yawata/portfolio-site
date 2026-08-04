@@ -45,6 +45,12 @@ export function SiteHeader() {
             <Link
               key={item.href}
               href={item.href}
+              target={"external" in item && item.external ? "_blank" : undefined}
+              rel={
+                "external" in item && item.external
+                  ? "noopener noreferrer"
+                  : undefined
+              }
               className={
                 "emphasized" in item && item.emphasized
                   ? "font-bold"
