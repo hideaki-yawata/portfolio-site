@@ -10,7 +10,7 @@ export function ContactSection() {
       <div className="mx-auto flex w-full max-w-[1200px] flex-col xl:flex-row">
         <div className="flex w-full flex-col items-end gap-8 py-8 md:gap-12 md:py-12 xl:w-1/2 xl:items-start xl:gap-12 xl:py-12 xl:pr-4">
           <div className="flex w-full flex-col gap-4 text-text">
-            <h2 className="text-[32px] font-bold leading-normal md:text-[48px]">
+            <h2 className="text-[32px] font-bold leading-[1.2] md:text-[48px]">
               Contact
             </h2>
             <p className="text-xs leading-[1.5] md:text-base">
