@@ -1,13 +1,23 @@
 @import "tailwindcss";
 
 :root {
+  /* 背景 */
   --background: #fefefe;
   --sub-background: #f8f8f8;
-  --text: #2c2c2a;
+  /* アクセント */
   --accent: #2059a6;
-  --sub-accent-1: rgba(32, 89, 166, 0.5);
-  --sub-accent-2: #21759b;
+  /* サブアクセント（#2059A6 の不透明度） */
+  --sub-accent-50: rgba(32, 89, 166, 0.5);
+  --sub-accent-25: rgba(32, 89, 166, 0.25);
+  /* テキスト */
+  --text: #2c2c2a;
+  /* オーバーレイ（#2C2C2A の不透明度） */
   --overlay: rgba(44, 44, 42, 0.25);
+  --overlay-50: rgba(44, 44, 42, 0.5);
+  --overlay-75: rgba(44, 44, 42, 0.75);
+  /* カテゴリー（Work タグ等） */
+  --category-1: #21759b;
+  --category-2: #2b2c30;
 }
 
 @theme inline {
@@ -15,8 +25,13 @@
   --color-sub-background: var(--sub-background);
   --color-text: var(--text);
   --color-accent: var(--accent);
-  --color-sub-accent-1: var(--sub-accent-1);
-  --color-sub-accent-2: var(--sub-accent-2);
+  --color-sub-accent-50: var(--sub-accent-50);
+  --color-sub-accent-25: var(--sub-accent-25);
+  --color-overlay: var(--overlay);
+  --color-overlay-50: var(--overlay-50);
+  --color-overlay-75: var(--overlay-75);
+  --color-category-1: var(--category-1);
+  --color-category-2: var(--category-2);
   --font-sans: var(--font-plus-jakarta);
 }
 

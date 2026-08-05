@@ -1,10 +1,11 @@
 import Image from "next/image";
 import type { WorkItem, WorkTagVariant } from "@/types/work";
 
+/** Work タグ色（変更前の見た目: 50% アクセント / #21759B） */
 const tagClassName: Record<WorkTagVariant, string> = {
   accent: "bg-accent",
-  subAccent1: "bg-sub-accent-1",
-  subAccent2: "bg-sub-accent-2",
+  subAccent1: "bg-sub-accent-50",
+  subAccent2: "bg-category-1",
 };
 
 type WorkCardProps = {

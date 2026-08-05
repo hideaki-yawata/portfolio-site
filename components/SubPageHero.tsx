@@ -34,7 +34,7 @@ export function SubPageHero({ title, imageSrc }: SubPageHeroProps) {
         sizes={subPageHeroFillSizes.desktop}
       />
       <span
-        className="pointer-events-none absolute inset-0 bg-[rgba(44,44,42,0.25)]"
+        className="pointer-events-none absolute inset-0 bg-overlay"
         aria-hidden
       />
       <h1 className="relative z-10 mx-auto w-full max-w-[1200px] text-[32px] font-bold leading-[1.2] text-background md:text-[48px]">

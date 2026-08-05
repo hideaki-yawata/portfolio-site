@@ -61,7 +61,7 @@ export function PhotoLightbox({
 
   return (
     <div
-      className="fixed inset-0 z-[100] flex items-center justify-center bg-[rgba(44,44,42,0.75)] px-4 xl:px-[120px]"
+      className="fixed inset-0 z-[100] flex items-center justify-center bg-overlay-75 px-4 xl:px-[120px]"
       role="dialog"
       aria-modal="true"
       aria-label={item.alt}

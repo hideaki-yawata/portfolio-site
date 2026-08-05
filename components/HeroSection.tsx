@@ -88,7 +88,7 @@ export function HeroPanel({
         sizes={responsiveHeroFillSizes.desktop}
       />
       <span
-        className={`pointer-events-none absolute inset-0 bg-[rgba(44,44,42,0.25)] transition-colors ${transitionClass} group-hover:bg-[rgba(44,44,42,0.5)] group-focus-visible:bg-[rgba(44,44,42,0.5)]`}
+        className={`pointer-events-none absolute inset-0 bg-overlay transition-colors ${transitionClass} group-hover:bg-overlay-50 group-focus-visible:bg-overlay-50`}
         aria-hidden
       />
 
