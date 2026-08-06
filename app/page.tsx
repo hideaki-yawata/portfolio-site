@@ -6,6 +6,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { TimelineList } from "@/components/TimelineList";
 import { WorkCard } from "@/components/WorkCard";
+import { getWebDevelopmentList, getWebDesignList } from "@/lib/microcms";
 import {
   photoCategories,
   timelineEntries,
@@ -34,7 +35,11 @@ export default function Home() {
           />
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
             {webDesignWorks.map((work, index) => (
-              <WorkCard key={`web-design-${index}`} work={work} />
+              <WorkCard
+                fetchData={getWebDesignList}
+                key={`web-design-${index}`}
+                work={work}
+              />
             ))}
           </div>
         </div>
@@ -54,7 +59,11 @@ export default function Home() {
           />
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
             {webDevelopmentWorks.map((work, index) => (
-              <WorkCard key={`web-development-${index}`} work={work} />
+              <WorkCard
+                fetchData={getWebDevelopmentList}
+                key={`web-development-${index}`}
+                work={work}
+              />
             ))}
           </div>
         </div>
