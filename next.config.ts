@@ -8,6 +8,14 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: projectRoot,
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "images.microcms-assets.io",
+      },
+    ],
+  },
 };
 
 export default nextConfig;
