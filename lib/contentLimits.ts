@@ -19,8 +19,5 @@ export const HOME_PHOTOS_PER_CATEGORY = 2;
 /** Sub-pages: max items per microCMS list request */
 export const SUBPAGE_MICROCMS_LIST_LIMIT = 100;
 
-/** /photography: images per category (4 columns × 2 rows) */
-export const SUBPAGE_PHOTOS_PER_CATEGORY = 8;
-
 /** Expand category references on work APIs */
 export const MICROCMS_CATEGORY_DEPTH = 1;
