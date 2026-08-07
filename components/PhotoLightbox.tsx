@@ -73,12 +73,12 @@ export function PhotoLightbox({
         onClick={onClose}
       />
 
-      <div className="relative z-10 aspect-[3/2] w-full max-w-[1200px] shrink-0">
+      <div className="relative z-10 h-[85vh] w-full max-w-[1200px] shrink-0">
         <Image
           src={item.src}
           alt={item.alt}
           fill
-          className="object-cover"
+          className="object-contain"
           sizes="(max-width: 767px) 100vw, (max-width: 1279px) 768px, 1200px"
           priority
         />
