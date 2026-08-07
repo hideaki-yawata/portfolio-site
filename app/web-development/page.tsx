@@ -6,6 +6,10 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SubPageHero } from "@/components/SubPageHero";
 import { WorkCard } from "@/components/WorkCard";
 import { images } from "@/lib/images";
+import {
+  MICROCMS_CATEGORY_DEPTH,
+  SUBPAGE_MICROCMS_LIST_LIMIT,
+} from "@/lib/contentLimits";
 import { getWebDevelopmentList } from "@/lib/microcms";
 
 export const metadata: Metadata = {
@@ -14,7 +18,10 @@ export const metadata: Metadata = {
 };
 
 export default async function WebDevelopmentPage() {
-  const data = await getWebDevelopmentList({ limit: 100, depth: 1 });
+  const data = await getWebDevelopmentList({
+    limit: SUBPAGE_MICROCMS_LIST_LIMIT,
+    depth: MICROCMS_CATEGORY_DEPTH,
+  });
 
   return (
     <div className="flex min-h-full flex-col bg-background text-text">

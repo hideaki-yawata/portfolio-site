@@ -7,6 +7,14 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { TimelineList } from "@/components/TimelineList";
 import { WorkCard } from "@/components/WorkCard";
 import {
+  HOME_PHOTO_CATEGORY_COUNT,
+  HOME_PHOTOGRAPHY_ENTRY_LIMIT,
+  HOME_PHOTOS_PER_CATEGORY,
+  HOME_WEB_DESIGN_LIMIT,
+  HOME_WEB_DEVELOPMENT_LIMIT,
+  MICROCMS_CATEGORY_DEPTH,
+} from "@/lib/contentLimits";
+import {
   getPhotographyList,
   getWebDevelopmentList,
   getWebDesignList,
@@ -17,14 +25,20 @@ import { timelineEntries } from "@/lib/topPageData";
 export default async function Home() {
   const [webDesignData, webDevelopmentData, photographyData] =
     await Promise.all([
-      getWebDesignList({ limit: 3, depth: 1 }),
-      getWebDevelopmentList({ limit: 3, depth: 1 }),
-      getPhotographyList({ limit: 1 }),
+      getWebDesignList({
+        limit: HOME_WEB_DESIGN_LIMIT,
+        depth: MICROCMS_CATEGORY_DEPTH,
+      }),
+      getWebDevelopmentList({
+        limit: HOME_WEB_DEVELOPMENT_LIMIT,
+        depth: MICROCMS_CATEGORY_DEPTH,
+      }),
+      getPhotographyList({ limit: HOME_PHOTOGRAPHY_ENTRY_LIMIT }),
     ]);
 
   const photoCategories = toPhotoCategories(photographyData.contents, {
-    maxImagesPerCategory: 2,
-  }).slice(0, 4);
+    maxImagesPerCategory: HOME_PHOTOS_PER_CATEGORY,
+  }).slice(0, HOME_PHOTO_CATEGORY_COUNT);
 
   return (
     <div className="flex flex-col bg-background text-text">

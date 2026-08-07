@@ -6,6 +6,10 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SubPageHero } from "@/components/SubPageHero";
 import { images } from "@/lib/images";
+import {
+  SUBPAGE_MICROCMS_LIST_LIMIT,
+  SUBPAGE_PHOTOS_PER_CATEGORY,
+} from "@/lib/contentLimits";
 import { getPhotographyList, toPhotoCategories } from "@/lib/microcms";
 
 export const metadata: Metadata = {
@@ -14,9 +18,11 @@ export const metadata: Metadata = {
 };
 
 export default async function PhotographyPage() {
-  const photographyData = await getPhotographyList({ limit: 100 });
+  const photographyData = await getPhotographyList({
+    limit: SUBPAGE_MICROCMS_LIST_LIMIT,
+  });
   const photoCategories = toPhotoCategories(photographyData.contents, {
-    maxImagesPerCategory: 8,
+    maxImagesPerCategory: SUBPAGE_PHOTOS_PER_CATEGORY,
   });
 
   return (
