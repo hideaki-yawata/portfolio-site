@@ -1,5 +1,5 @@
 import { images } from "@/lib/images";
-import type { PhotoCategory, TimelineEntry, WorkItem } from "@/types/work";
+import type { TimelineEntry, WorkItem } from "@/types/work";
 
 const sampleWorkTags: WorkItem["tags"] = [
   { label: "Design", variant: "accent" },
@@ -31,17 +31,6 @@ export const webPortfolioWorks: WorkItem[] = Array.from(
   { length: 10 },
   sampleWork,
 );
-
-export const photoCategories: PhotoCategory[] = [
-  { title: "Coworking Space", images: [images.photoSample, images.photoSample] },
-  { title: "Cafe", images: [images.photoSample, images.photoSample] },
-  { title: "Food / Drinks", images: [images.photoSample, images.photoSample] },
-  { title: "Accomodation", images: [images.photoSample, images.photoSample] },
-  { title: "Restaurant", images: [images.photoSample, images.photoSample] },
-  { title: "Gym", images: [images.photoSample, images.photoSample] },
-  { title: "Yoga Studio", images: [images.photoSample, images.photoSample] },
-  { title: "Animals", images: [images.photoSample, images.photoSample] },
-];
 
 export const timelineEntries: TimelineEntry[] = [
   {

@@ -6,14 +6,25 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { TimelineList } from "@/components/TimelineList";
 import { WorkCard } from "@/components/WorkCard";
-import { getWebDevelopmentList, getWebDesignList } from "@/lib/microcms";
-import { photoCategories, timelineEntries } from "@/lib/topPageData";
+import {
+  getPhotographyList,
+  getWebDevelopmentList,
+  getWebDesignList,
+  toPhotoCategories,
+} from "@/lib/microcms";
+import { timelineEntries } from "@/lib/topPageData";
 
 export default async function Home() {
-  const [webDesignData, webDevelopmentData] = await Promise.all([
-    getWebDesignList({ limit: 3, depth: 1 }),
-    getWebDevelopmentList({ limit: 3, depth: 1 }),
-  ]);
+  const [webDesignData, webDevelopmentData, photographyData] =
+    await Promise.all([
+      getWebDesignList({ limit: 3, depth: 1 }),
+      getWebDevelopmentList({ limit: 3, depth: 1 }),
+      getPhotographyList({ limit: 1 }),
+    ]);
+
+  const photoCategories = toPhotoCategories(photographyData.contents, {
+    maxImagesPerCategory: 2,
+  });
 
   return (
     <div className="flex flex-col bg-background text-text">

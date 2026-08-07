@@ -6,14 +6,19 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SubPageHero } from "@/components/SubPageHero";
 import { images } from "@/lib/images";
-import { photoCategories } from "@/lib/topPageData";
+import { getPhotographyList, toPhotoCategories } from "@/lib/microcms";
 
 export const metadata: Metadata = {
   title: "Photography | Hideaki Yawata Portfolio Site",
   description: "Photography portfolio by category",
 };
 
-export default function PhotographyPage() {
+export default async function PhotographyPage() {
+  const photographyData = await getPhotographyList({ limit: 10 });
+  const photoCategories = toPhotoCategories(photographyData.contents, {
+    maxImagesPerCategory: 8,
+  });
+
   return (
     <div className="flex min-h-full flex-col bg-background text-text">
       <div className="relative">
@@ -29,7 +34,7 @@ export default function PhotographyPage() {
             <PhotographyGalleries
               categories={photoCategories}
               subPage
-              gridClassName="grid w-full grid-cols-1 gap-y-4 md:grid-cols-2 md:gap-x-2 md:gap-y-4"
+              gridClassName="flex w-full flex-col gap-12 xl:gap-16"
             />
             <HomeLink />
           </div>

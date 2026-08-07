@@ -19,10 +19,16 @@ export function PhotoCategoryGallery({
     ? "text-2xl font-bold leading-[1.5] text-text md:text-2xl"
     : "text-xl font-bold leading-[1.5] text-text md:text-2xl";
 
-  const gridClassName = "grid grid-cols-2 gap-2";
+  const gridClassName = subPage
+    ? "grid grid-cols-2 gap-2 md:grid-cols-4"
+    : "grid grid-cols-2 gap-2";
 
   const imageWrapperClassName =
     "relative aspect-[3/2] w-full overflow-hidden";
+
+  const imageSizes = subPage
+    ? "(max-width: 767px) 50vw, (max-width: 1279px) 25vw, 288px"
+    : "(max-width: 767px) 50vw, (max-width: 1279px) 50vw, 294px";
 
   return (
     <div className={`flex flex-col ${subPage ? "gap-2" : "gap-1 md:gap-2"}`}>
@@ -41,7 +47,7 @@ export function PhotoCategoryGallery({
               alt=""
               fill
               className="object-cover"
-              sizes="(max-width: 767px) 50vw, (max-width: 1279px) 50vw, 294px"
+              sizes={imageSizes}
             />
           </button>
         ))}
