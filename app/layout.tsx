@@ -5,6 +5,14 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Hideaki Yawata Portfolio Site",
   description: "Web design, development, and photography portfolio",
+  robots: {
+    index: false,
+    follow: false,
+    googleBot: {
+      index: false,
+      follow: false,
+    },
+  },
 };
 
 export default function RootLayout({
