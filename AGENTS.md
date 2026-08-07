@@ -1,45 +1,46 @@
 # AGENTS.md
 
-このプロジェクトのコーディング規約とルールをまとめたガイドです。
-AIコーディングエージェント(Cursor、Claude Codeなど)はこのファイルの指示に従ってください。
+Coding conventions and rules for this project. Coding agents (Cursor, Claude Code, etc.) should follow this file.
 
-## プロジェクト概要
+Write new comments and documentation in English.
 
-- Next.js 16(App Router) + TypeScript + Tailwind CSS v4
-- ヘッドレスCMS: microCMS
-- デプロイ先: Vercel
+## Project overview
 
-## ディレクトリ構成
+- Next.js 16 (App Router) + TypeScript + Tailwind CSS v4
+- Headless CMS: microCMS
+- Deploy target: Vercel
 
-- `app/` — ページ・ルーティング(App Router)
-- `components/` — 再利用可能なUIコンポーネント
-- `lib/` — CMS取得処理・ユーティリティ関数
-- `types/` — TypeScriptの型定義
+## Directory layout
 
-## コーディングルール
+- `app/` — Pages and routing (App Router)
+- `components/` — Reusable UI components
+- `lib/` — CMS fetch logic and utilities
+- `types/` — TypeScript type definitions
 
-- コンポーネントは関数コンポーネント + TypeScriptで記述する(class componentは使わない)
-- スタイリングはTailwind CSSのユーティリティクラスのみを使用し、CSS Modulesやstyled-componentsは使わない
-- カラーは以下のテーマカラーを使用すること(グローバルCSSの@theme参照):
-  - 背景: `#FEFEFE`
-  - サブ背景: `#F8F8F8`
-  - アクセント: `#2059A6`
-  - サブアクセント: `#2059A6`（50% / 25% 不透明度）
-  - テキスト: `#2C2C2A`
-  - オーバーレイ: `#2C2C2A`（25% 不透明度）
-  - カテゴリー: `#21759B` / `#2B2C30`
-- 画像は必ず`next/image`の`<Image>`コンポーネントを使用する(`<img>`タグは使わない)
-- データ取得はServer Componentを優先し、必要な場合のみ`"use client"`を明示する
-- microCMSからのデータ取得処理は`lib/microcms.ts`に集約する
+## Coding rules
 
-## 命名規則
+- Use function components with TypeScript (no class components)
+- Style with Tailwind CSS utility classes only; do not use CSS Modules or styled-components
+- Use the theme colors below (see `@theme` in global CSS):
+  - Background: `#FEFEFE`
+  - Sub-background: `#F8F8F8`
+  - Accent: `#2059A6`
+  - Sub-accent: `#2059A6` at 50% / 25% opacity (`sub-accent-50`, `sub-accent-25`)
+  - Text: `#2C2C2A`
+  - Overlay: `#2C2C2A` at 25% / 50% / 75% opacity
+  - Category (work tags, etc.): `#21759B` / `#2B2C30` (`category-1`, `category-2`)
+- Always use `next/image` `<Image>` for images (no raw `<img>` tags)
+- Prefer Server Components for data fetching; add `"use client"` only when needed
+- Centralize microCMS fetch logic in `lib/microcms.ts`
 
-- コンポーネントファイル: PascalCase(例: `WorkCard.tsx`)
-- 関数・変数: camelCase
-- 型定義: `types/`配下に配置し、インターフェース名は`I`prefixを付けない(例: `WorkItem`)
+## Naming
 
-## 禁止事項
+- Component files: PascalCase (e.g. `WorkCard.tsx`)
+- Functions and variables: camelCase
+- Types live under `types/`; do not use an `I` prefix on interface names (e.g. `PhotoCategory`)
 
-- 非推奨のPages Router(`pages/`ディレクトリ)は使用しない
-- インラインスタイル(`style={{}}`)は原則使用しない
-- APIキーやシークレットをコード内にハードコーディングしない(`.env.local`を使用する)
+## Do not
+
+- Use the legacy Pages Router (`pages/` directory)
+- Use inline styles (`style={{}}`) except when unavoidable
+- Hard-code API keys or secrets (use `.env.local`)

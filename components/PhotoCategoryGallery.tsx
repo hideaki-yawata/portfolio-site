@@ -5,7 +5,7 @@ import type { PhotoCategory } from "@/types/work";
 
 type PhotoCategoryGalleryProps = {
   category: PhotoCategory;
-  /** 下層Photo一覧（Figma Photo mobile 等） */
+  /** Photography sub-page layout (e.g. /photography) */
   subPage?: boolean;
   onOpenPhoto: (indexInCategory: number) => void;
 };
