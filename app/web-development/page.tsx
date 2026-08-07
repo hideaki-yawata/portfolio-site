@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 };
 
 export default async function WebDevelopmentPage() {
-  const data = await getWebDevelopmentList({ limit: 10, depth: 1 });
+  const data = await getWebDevelopmentList({ limit: 100, depth: 1 });
 
   return (
     <div className="flex min-h-full flex-col bg-background text-text">
@@ -35,13 +35,8 @@ export default async function WebDevelopmentPage() {
 
           <div className="flex flex-col items-center gap-12 xl:gap-16">
             <div className="grid w-full grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
-              {data.contents.map((item, index) => (
-                <div
-                  key={item.id}
-                  className={index === 9 ? "md:hidden" : undefined}
-                >
-                  <WorkCard item={item} />
-                </div>
+              {data.contents.map((item) => (
+                <WorkCard key={item.id} item={item} />
               ))}
             </div>
             <HomeLink />

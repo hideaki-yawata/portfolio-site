@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 };
 
 export default async function PhotographyPage() {
-  const photographyData = await getPhotographyList({ limit: 10 });
+  const photographyData = await getPhotographyList({ limit: 100 });
   const photoCategories = toPhotoCategories(photographyData.contents, {
     maxImagesPerCategory: 8,
   });
