@@ -24,7 +24,7 @@ export default async function Home() {
 
   const photoCategories = toPhotoCategories(photographyData.contents, {
     maxImagesPerCategory: 2,
-  });
+  }).slice(0, 4);
 
   return (
     <div className="flex flex-col bg-background text-text">
