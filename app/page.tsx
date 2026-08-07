@@ -7,14 +7,14 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { TimelineList } from "@/components/TimelineList";
 import { WorkCard } from "@/components/WorkCard";
 import { getWebDevelopmentList, getWebDesignList } from "@/lib/microcms";
-import {
-  photoCategories,
-  timelineEntries,
-  webDesignWorks,
-  webDevelopmentWorks,
-} from "@/lib/topPageData";
+import { photoCategories, timelineEntries } from "@/lib/topPageData";
 
-export default function Home() {
+export default async function Home() {
+  const [webDesignData, webDevelopmentData] = await Promise.all([
+    getWebDesignList({ limit: 3, depth: 1 }),
+    getWebDevelopmentList({ limit: 3, depth: 1 }),
+  ]);
+
   return (
     <div className="flex flex-col bg-background text-text">
       <div className="relative">
@@ -34,12 +34,8 @@ export default function Home() {
             alignEnd
           />
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {webDesignWorks.map((work, index) => (
-              <WorkCard
-                fetchData={getWebDesignList}
-                key={`web-design-${index}`}
-                work={work}
-              />
+            {webDesignData.contents.map((item) => (
+              <WorkCard key={item.id} item={item} />
             ))}
           </div>
         </div>
@@ -58,12 +54,8 @@ export default function Home() {
             alignEnd
           />
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {webDevelopmentWorks.map((work, index) => (
-              <WorkCard
-                fetchData={getWebDevelopmentList}
-                key={`web-development-${index}`}
-                work={work}
-              />
+            {webDevelopmentData.contents.map((item) => (
+              <WorkCard key={item.id} item={item} />
             ))}
           </div>
         </div>

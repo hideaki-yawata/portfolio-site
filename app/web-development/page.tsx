@@ -6,14 +6,16 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SubPageHero } from "@/components/SubPageHero";
 import { WorkCard } from "@/components/WorkCard";
 import { images } from "@/lib/images";
-import { webPortfolioWorks } from "@/lib/topPageData";
+import { getWebDevelopmentList } from "@/lib/microcms";
 
 export const metadata: Metadata = {
   title: "Web Design / Development | Hideaki Yawata Portfolio Site",
   description: "Web design and development portfolio works",
 };
 
-export default function WebDevelopmentPage() {
+export default async function WebDevelopmentPage() {
+  const data = await getWebDevelopmentList({ limit: 10, depth: 1 });
+
   return (
     <div className="flex min-h-full flex-col bg-background text-text">
       <div className="relative">
@@ -33,12 +35,12 @@ export default function WebDevelopmentPage() {
 
           <div className="flex flex-col items-center gap-12 xl:gap-16">
             <div className="grid w-full grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
-              {webPortfolioWorks.map((work, index) => (
+              {data.contents.map((item, index) => (
                 <div
-                  key={`web-portfolio-${index}`}
+                  key={item.id}
                   className={index === 9 ? "md:hidden" : undefined}
                 >
-                  <WorkCard work={work} />
+                  <WorkCard item={item} />
                 </div>
               ))}
             </div>

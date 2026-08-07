@@ -5,12 +5,19 @@ import type {
   MicroCMSListContent,
 } from "microcms-js-sdk";
 
-export type WebDevelopment = {
+export type MicroCMSWorkCategory = {
+  name: string;
+};
+
+export type MicroCMSWorkItem = {
   title: string;
   thumbnail: MicroCMSImage;
   url: string;
-  category: string[];
+  category: MicroCMSWorkCategory[];
 } & MicroCMSListContent;
+
+export type WebDesign = MicroCMSWorkItem;
+export type WebDevelopment = MicroCMSWorkItem;
 
 if (!process.env.MICROCMS_SERVICE_DOMAIN) {
   throw new Error("MICROCMS_SERVICE_DOMAIN is required");
