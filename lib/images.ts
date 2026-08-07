@@ -15,13 +15,11 @@ export const images = {
     tablet: "/images/hero/photography/tablet.png",
     desktop: "/images/hero/photography/desktop.png",
   },
-  workThumbnail: "/images/work-thumbnail.png",
   webSubHero: {
     mobile: "/images/web-sub-hero/mobile.png",
     tablet: "/images/web-sub-hero/tablet.png",
     desktop: "/images/web-sub-hero/desktop.png",
   },
-  photoSample: "/images/photo-sample.png",
   photoSubHero: {
     mobile: "/images/photo-sub-hero/mobile.png",
     tablet: "/images/photo-sub-hero/tablet.png",

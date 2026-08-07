@@ -1,36 +1,4 @@
-import { images } from "@/lib/images";
-import type { TimelineEntry, WorkItem } from "@/types/work";
-
-const sampleWorkTags: WorkItem["tags"] = [
-  { label: "Design", variant: "accent" },
-  { label: "Coding", variant: "subAccent1" },
-  { label: "WordPress", variant: "subAccent2" },
-];
-
-const sampleWorkBase = {
-  title: "Japan Mobility Data Space",
-  imageSrc: images.workThumbnail,
-  tags: sampleWorkTags,
-} as const;
-
-/** Replace with real project URLs (microCMS or static data). */
-const sampleWorkHref = "https://example.com";
-
-function sampleWork(): WorkItem {
-  return { ...sampleWorkBase, href: sampleWorkHref };
-}
-
-export const webDesignWorks: WorkItem[] = Array.from({ length: 3 }, sampleWork);
-
-export const webDevelopmentWorks: WorkItem[] = Array.from(
-  { length: 6 },
-  sampleWork,
-);
-
-export const webPortfolioWorks: WorkItem[] = Array.from(
-  { length: 10 },
-  sampleWork,
-);
+import type { TimelineEntry } from "@/types/work";
 
 export const timelineEntries: TimelineEntry[] = [
   {
