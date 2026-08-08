@@ -25,7 +25,9 @@ export const images = {
     tablet: "/images/photo-sub-hero/tablet.png",
     desktop: "/images/photo-sub-hero/desktop.png",
   },
-  contactPhoto: "/images/contact-photo.png",
+  contactPhoto: {
+    desktop: "/images/contact/desktop.png",
+  },
   icons: {
     hamburger: "/images/icons/hamburger.svg",
     menuClose: "/images/icons/menu-close.svg",
@@ -35,9 +37,9 @@ export const images = {
     sectionHighlight: "/images/icons/section-highlight.svg",
     viewAllArrow: "/images/icons/view-all-arrow.svg",
     contactArrowUp: "/images/icons/contact-arrow-up.svg",
-    linkedin: "/images/icons/linkedin.svg",
+    linkedinFooter: "/images/icons/linkedin-footer.svg",
+    githubFooter: "/images/icons/github-footer.svg",
     linkedinMenu: "/images/icons/linkedin-menu.svg",
-    github: "/images/icons/github.svg",
     githubMenu: "/images/icons/github-menu.svg",
     breadcrumbSeparator: "/images/icons/breadcrumb-separator.svg",
     homeLinkArrow: "/images/icons/home-link-arrow.svg",

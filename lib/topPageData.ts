@@ -24,6 +24,10 @@ export const timelineEntries: TimelineEntry[] = [
 ];
 
 export const contactFormHref = "https://forms.gle/fndGvnVxW84YJi8T9";
+export const contactFormAction =
+  "https://docs.google.com/forms/d/e/1FAIpQLScZtuLRB3nLeQ7AAI-Ji1neTGUaNWfWc7IleSXIFqVy4wKOQQ/formResponse";
+export const contactFormEntryName = "entry.2132285733";
+export const contactFormEntryMessage = "entry.215643141";
 export const linkedInHref =
   "https://www.linkedin.com/in/hideaki-yawata-84054b3a5/";
 export const githubHref = "https://github.com/hideaki-yawata";
@@ -35,8 +39,7 @@ export const navItems = [
   { label: "Background", href: "/#background" },
   {
     label: "Contact",
-    href: contactFormHref,
+    href: "/#contact",
     emphasized: true,
-    external: true,
   },
 ] as const;
