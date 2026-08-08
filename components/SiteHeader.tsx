@@ -7,9 +7,15 @@ import { MobileNavMenu } from "@/components/MobileNavMenu";
 import { images } from "@/lib/images";
 import { navItems } from "@/lib/topPageData";
 
-export function SiteHeader() {
+type SiteHeaderProps = {
+  /** Solid background and dark text (e.g. pages without a hero image). */
+  solid?: boolean;
+};
+
+export function SiteHeader({ solid = false }: SiteHeaderProps) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const useSolidStyles = solid || scrolled;
 
   useEffect(() => {
     const onScroll = () => {
@@ -24,7 +30,7 @@ export function SiteHeader() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 flex h-12 items-center px-4 py-0 transition-colors md:justify-center xl:h-[60px] xl:px-[120px] ${
-        scrolled
+        useSolidStyles
           ? "bg-background text-text shadow-[0_1px_0_0_var(--sub-background)]"
           : "bg-transparent text-background"
       }`}
@@ -75,7 +81,7 @@ export function SiteHeader() {
             alt=""
             width={24}
             height={16}
-            className={`h-full w-full object-contain ${scrolled ? "invert" : ""}`}
+            className={`h-full w-full object-contain ${useSolidStyles ? "invert" : ""}`}
           />
         </button>
       </div>
