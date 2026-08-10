@@ -1,6 +1,7 @@
 import { Resend } from "resend";
 import { NextResponse } from "next/server";
 import { isContactHoneypotTripped } from "@/lib/contactHoneypot";
+import { enforceContactRateLimit } from "@/lib/contactRateLimit";
 import { sanitizeEmailHeaderValue } from "@/lib/sanitizeEmailHeader";
 
 const MAX_NAME_LENGTH = 100;
@@ -82,6 +83,11 @@ export async function POST(request: Request) {
 
   if (isContactHoneypotTripped(body as Record<string, unknown>)) {
     return NextResponse.json({ ok: true });
+  }
+
+  const rateLimit = await enforceContactRateLimit(request);
+  if (!rateLimit.allowed) {
+    return NextResponse.json({ error: rateLimit.error }, { status: 429 });
   }
 
   const parsed = parseBody(body);
