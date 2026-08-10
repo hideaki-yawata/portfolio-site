@@ -1,6 +1,7 @@
 import { Resend } from "resend";
 import { NextResponse } from "next/server";
 import { isContactHoneypotTripped } from "@/lib/contactHoneypot";
+import { sanitizeEmailHeaderValue } from "@/lib/sanitizeEmailHeader";
 
 const MAX_NAME_LENGTH = 100;
 const MAX_EMAIL_LENGTH = 254;
@@ -25,8 +26,8 @@ function parseBody(body: ContactPayload) {
     return { error: "Invalid request body." as const };
   }
 
-  const name = body.name.trim();
-  const email = body.email.trim();
+  const name = sanitizeEmailHeaderValue(body.name.trim());
+  const email = sanitizeEmailHeaderValue(body.email.trim());
   const message = body.message.trim();
 
   if (!name || !email || !message) {
