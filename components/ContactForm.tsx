@@ -1,11 +1,14 @@
 "use client";
 
-import { useState } from "react";
+import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
+import { useRef, useState } from "react";
 import type { FormEvent } from "react";
 import { IconImage } from "@/components/IconImage";
 import { plusJakartaItalic } from "@/lib/fonts";
 import { images } from "@/lib/images";
 import { CONTACT_HONEYPOT_FIELD } from "@/lib/contactHoneypot";
+
+const turnstileSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 
 const fieldLabelClassName =
   "text-base font-bold leading-[1.2] text-text md:text-xl";
@@ -19,17 +22,30 @@ type ContactFormProps = {
 };
 
 export function ContactForm({ className }: ContactFormProps) {
+  const turnstileRef = useRef<TurnstileInstance>(null);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [website, setWebsite] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
   const [status, setStatus] = useState<FormStatus>("idle");
   const [errorMessage, setErrorMessage] = useState("");
+
+  function resetTurnstile() {
+    setTurnstileToken(null);
+    turnstileRef.current?.reset();
+  }
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setStatus("submitting");
     setErrorMessage("");
+
+    if (turnstileSiteKey && !turnstileToken) {
+      setStatus("error");
+      setErrorMessage("Please complete the verification check.");
+      return;
+    }
 
     try {
       const response = await fetch("/api/contact", {
@@ -40,6 +56,7 @@ export function ContactForm({ className }: ContactFormProps) {
           email,
           message,
           [CONTACT_HONEYPOT_FIELD]: website,
+          turnstileToken,
         }),
       });
 
@@ -50,6 +67,7 @@ export function ContactForm({ className }: ContactFormProps) {
         setErrorMessage(
           data.error ?? "Something went wrong. Please try again.",
         );
+        resetTurnstile();
         return;
       }
 
@@ -58,9 +76,11 @@ export function ContactForm({ className }: ContactFormProps) {
       setMessage("");
       setWebsite("");
       setStatus("success");
+      resetTurnstile();
     } catch {
       setStatus("error");
       setErrorMessage("Something went wrong. Please try again.");
+      resetTurnstile();
     }
   }
 
@@ -171,6 +191,21 @@ export function ContactForm({ className }: ContactFormProps) {
           >
             {errorMessage}
           </p>
+        ) : null}
+
+        {turnstileSiteKey ? (
+          <Turnstile
+            ref={turnstileRef}
+            siteKey={turnstileSiteKey}
+            options={{ action: "contact", theme: "light" }}
+            onSuccess={setTurnstileToken}
+            onExpire={() => setTurnstileToken(null)}
+            onError={() => {
+              setTurnstileToken(null);
+              setErrorMessage("Verification failed. Please try again.");
+              setStatus("error");
+            }}
+          />
         ) : null}
       </div>
     </form>

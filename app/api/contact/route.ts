@@ -3,6 +3,7 @@ import { NextResponse } from "next/server";
 import { isContactHoneypotTripped } from "@/lib/contactHoneypot";
 import { enforceContactRateLimit } from "@/lib/contactRateLimit";
 import { sanitizeEmailHeaderValue } from "@/lib/sanitizeEmailHeader";
+import { verifyTurnstileToken } from "@/lib/verifyTurnstile";
 
 const MAX_NAME_LENGTH = 100;
 const MAX_EMAIL_LENGTH = 254;
@@ -12,6 +13,7 @@ type ContactPayload = {
   name?: unknown;
   email?: unknown;
   message?: unknown;
+  turnstileToken?: unknown;
 };
 
 function isValidEmail(value: string): boolean {
@@ -83,6 +85,11 @@ export async function POST(request: Request) {
 
   if (isContactHoneypotTripped(body as Record<string, unknown>)) {
     return NextResponse.json({ ok: true });
+  }
+
+  const turnstile = await verifyTurnstileToken(request, body.turnstileToken);
+  if (!turnstile.ok) {
+    return NextResponse.json({ error: turnstile.error }, { status: 400 });
   }
 
   const rateLimit = await enforceContactRateLimit(request);
