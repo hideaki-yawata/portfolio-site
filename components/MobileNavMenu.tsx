@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useEffect } from "react";
 import { IconImage } from "@/components/IconImage";
 import { images } from "@/lib/images";
-import { githubHref, linkedInHref, navItems } from "@/lib/topPageData";
+import { navItems } from "@/lib/topPageData";
 
 type MobileNavMenuProps = {
   open: boolean;
@@ -85,37 +85,6 @@ export function MobileNavMenu({ open, onClose }: MobileNavMenuProps) {
             </Link>
           ))}
         </nav>
-
-        <div className="mt-12 flex items-center gap-2">
-          <Link
-            href={linkedInHref}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="LinkedIn"
-            onClick={onClose}
-          >
-            <IconImage
-              src={images.icons.linkedinMenu}
-              width={24}
-              height={24}
-              className="size-6"
-            />
-          </Link>
-          <Link
-            href={githubHref}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="GitHub"
-            onClick={onClose}
-          >
-            <IconImage
-              src={images.icons.githubMenu}
-              width={24}
-              height={24}
-              className="size-6"
-            />
-          </Link>
-        </div>
       </div>
     </div>
   );
