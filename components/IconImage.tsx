@@ -8,6 +8,7 @@ type IconImageProps = Omit<ImageProps, "alt"> & {
 export function IconImage({
   alt = "",
   className,
+  style,
   ...props
 }: IconImageProps) {
   const sizeClass = "h-auto w-auto";
@@ -15,5 +16,12 @@ export function IconImage({
     ? `${sizeClass} ${className}`
     : sizeClass;
 
-  return <Image alt={alt} className={mergedClassName} {...props} />;
+  return (
+    <Image
+      alt={alt}
+      className={mergedClassName}
+      style={{ width: "auto", height: "auto", ...style }}
+      {...props}
+    />
+  );
 }

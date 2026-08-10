@@ -79,6 +79,7 @@ export function HeroPanel({
         fill
         className="hidden object-cover md:block xl:hidden"
         sizes={responsiveHeroFillSizes.tablet}
+        priority
       />
       <Image
         src={imageSrc.desktop}
@@ -86,6 +87,7 @@ export function HeroPanel({
         fill
         className="hidden object-cover xl:block"
         sizes={responsiveHeroFillSizes.desktop}
+        priority
       />
       <span
         className={`pointer-events-none absolute inset-0 bg-overlay transition-colors ${transitionClass} group-hover:bg-overlay-50 group-focus-visible:bg-overlay-50`}
