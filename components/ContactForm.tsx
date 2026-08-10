@@ -5,6 +5,7 @@ import type { FormEvent } from "react";
 import { IconImage } from "@/components/IconImage";
 import { plusJakartaItalic } from "@/lib/fonts";
 import { images } from "@/lib/images";
+import { CONTACT_HONEYPOT_FIELD } from "@/lib/contactHoneypot";
 
 const fieldLabelClassName =
   "text-base font-bold leading-[1.2] text-text md:text-xl";
@@ -21,6 +22,7 @@ export function ContactForm({ className }: ContactFormProps) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [website, setWebsite] = useState("");
   const [status, setStatus] = useState<FormStatus>("idle");
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -33,7 +35,12 @@ export function ContactForm({ className }: ContactFormProps) {
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, message }),
+        body: JSON.stringify({
+          name,
+          email,
+          message,
+          [CONTACT_HONEYPOT_FIELD]: website,
+        }),
       });
 
       const data = (await response.json()) as { error?: string };
@@ -49,6 +56,7 @@ export function ContactForm({ className }: ContactFormProps) {
       setName("");
       setEmail("");
       setMessage("");
+      setWebsite("");
       setStatus("success");
     } catch {
       setStatus("error");
@@ -61,8 +69,24 @@ export function ContactForm({ className }: ContactFormProps) {
   return (
     <form
       onSubmit={handleSubmit}
-      className={`flex w-full flex-col items-end gap-4 xl:items-start xl:gap-8 ${className ?? ""}`}
+      className={`relative flex w-full flex-col items-end gap-4 xl:items-start xl:gap-8 ${className ?? ""}`}
     >
+      <div
+        className="absolute h-px w-px overflow-hidden opacity-0"
+        aria-hidden="true"
+      >
+        <label htmlFor="contact-website">Website</label>
+        <input
+          id="contact-website"
+          name={CONTACT_HONEYPOT_FIELD}
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+          value={website}
+          onChange={(event) => setWebsite(event.target.value)}
+        />
+      </div>
+
       <div className="flex w-full flex-col gap-4">
         <div className="flex w-full flex-col gap-2">
           <label htmlFor="contact-name" className={fieldLabelClassName}>

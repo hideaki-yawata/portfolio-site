@@ -1,5 +1,6 @@
 import { Resend } from "resend";
 import { NextResponse } from "next/server";
+import { isContactHoneypotTripped } from "@/lib/contactHoneypot";
 
 const MAX_NAME_LENGTH = 100;
 const MAX_EMAIL_LENGTH = 254;
@@ -76,6 +77,10 @@ export async function POST(request: Request) {
     body = (await request.json()) as ContactPayload;
   } catch {
     return NextResponse.json({ error: "Invalid JSON." }, { status: 400 });
+  }
+
+  if (isContactHoneypotTripped(body as Record<string, unknown>)) {
+    return NextResponse.json({ ok: true });
   }
 
   const parsed = parseBody(body);
