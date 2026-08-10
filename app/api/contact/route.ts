@@ -52,18 +52,6 @@ function parseBody(body: ContactPayload) {
   return { name, email, message };
 }
 
-function buildAutoReplyText(name: string): string {
-  return [
-    `Hi ${name},`,
-    "",
-    "Thank you for getting in touch through my portfolio site.",
-    "I have received your message and will get back to you as soon as I can.",
-    "",
-    "Best regards,",
-    "Hideaki Yawata",
-  ].join("\n");
-}
-
 export async function POST(request: Request) {
   const apiKey = process.env.RESEND_API_KEY;
   const fromEmail = process.env.RESEND_FROM_EMAIL;
@@ -105,25 +93,16 @@ export async function POST(request: Request) {
   const { name, email, message } = parsed;
   const resend = new Resend(apiKey);
 
-  const [ownerResult, autoReplyResult] = await Promise.all([
-    resend.emails.send({
-      from: fromEmail,
-      to: toEmail,
-      replyTo: email,
-      subject: `Portfolio contact from ${name}`,
-      text: [`Name: ${name}`, `Email: ${email}`, "", message].join("\n"),
-    }),
-    resend.emails.send({
-      from: fromEmail,
-      to: email,
-      replyTo: toEmail,
-      subject: "Thank you for your message",
-      text: buildAutoReplyText(name),
-    }),
-  ]);
+  const { error } = await resend.emails.send({
+    from: fromEmail,
+    to: toEmail,
+    replyTo: email,
+    subject: `Portfolio contact from ${name}`,
+    text: [`Name: ${name}`, `Email: ${email}`, "", message].join("\n"),
+  });
 
-  if (ownerResult.error || autoReplyResult.error) {
-    console.error("Resend error:", ownerResult.error ?? autoReplyResult.error);
+  if (error) {
+    console.error("Resend error:", error);
     return NextResponse.json(
       { error: "Failed to send message. Please try again later." },
       { status: 502 },
