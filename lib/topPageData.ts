@@ -2,7 +2,7 @@ import type { TimelineEntry } from "@/types/work";
 
 export const timelineEntries: TimelineEntry[] = [
   {
-    period: "2025-2026",
+    period: "2026",
     description:
       "Completed the German B2 course at VICTORIA | Academy of Languages in Berlin.",
   },
@@ -12,7 +12,7 @@ export const timelineEntries: TimelineEntry[] = [
       "Started a career as a freelance web engineer and designer. Involved in the development and maintenance of numerous WordPress sites.",
   },
   {
-    period: "2012-2020",
+    period: "2013-2020",
     description:
       "Worked at Yuinchu Inc. as marketing staff in the rental space division, handling photography for website and social media content.",
   },
