@@ -9,7 +9,7 @@ export const timelineEntries: TimelineEntry[] = [
   {
     period: "2020-Present",
     description:
-      "Started a career as a freelance web engineer and designer. Involved in the development and maintenance of numerous WordPress sites.",
+      "Started a career as a freelance web engineer. Involved in the development and maintenance of numerous WordPress sites.",
   },
   {
     period: "2013-2020",
