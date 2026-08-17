@@ -27,9 +27,9 @@ export function SectionHeading({
           <div className="relative flex shrink-0 items-center gap-2.5">
             <IconImage
               src={images.icons.sectionHighlight}
-              width={41}
-              height={22}
-              className="absolute -left-1 top-0 h-[22px] w-[41px] md:-left-2 md:h-8 md:w-[60px]"
+              width={60}
+              height={32}
+              className="absolute -left-1 top-0 h-[22px] w-[41px] md:-left-2 md:h-[32px] md:w-[60px]"
             />
             <span
               className={`${plusJakartaItalic.className} relative text-[36px] font-bold leading-none text-accent md:text-[48px]`}

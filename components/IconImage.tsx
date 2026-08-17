@@ -4,24 +4,14 @@ type IconImageProps = Omit<ImageProps, "alt"> & {
   alt?: string;
 };
 
-/** Decorative SVG/icon images — h-auto w-auto avoids Next.js aspect-ratio warnings when sizing via CSS. */
+/** Decorative SVG/icon images sized via width/height props and/or Tailwind classes. */
 export function IconImage({
   alt = "",
   className,
   style,
   ...props
 }: IconImageProps) {
-  const sizeClass = "h-auto w-auto";
-  const mergedClassName = className
-    ? `${sizeClass} ${className}`
-    : sizeClass;
-
   return (
-    <Image
-      alt={alt}
-      className={mergedClassName}
-      style={{ width: "auto", height: "auto", ...style }}
-      {...props}
-    />
+    <Image alt={alt} className={className} style={style} {...props} />
   );
 }
