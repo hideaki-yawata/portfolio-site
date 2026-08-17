@@ -10,7 +10,7 @@ const categoryColorMap: Record<string, string> = {
   Design: "bg-accent",
   Coding: "bg-sub-accent-50",
   WordPress: "bg-category-1",
-  microCMS: "bg-category-2",
+  "Headless CMS": "bg-category-2",
 };
 
 export function WorkCard({ item }: WorkCardProps) {
