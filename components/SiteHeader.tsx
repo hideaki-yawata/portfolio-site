@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { IconImage } from "@/components/IconImage";
 import { MobileNavMenu } from "@/components/MobileNavMenu";
 import { images } from "@/lib/images";
-import { navItems } from "@/lib/topPageData";
+import { githubHref, linkedInHref, navItems } from "@/lib/topPageData";
 
 type SiteHeaderProps = {
   /** Solid background and dark text (e.g. pages without a hero image). */
@@ -43,30 +43,61 @@ export function SiteHeader({ solid = false }: SiteHeaderProps) {
           Hideaki Yawata Portfolio Site
         </Link>
 
-        <nav
-          className="hidden items-center gap-4 text-xs leading-[1.5] md:flex xl:gap-6 xl:text-base"
-          aria-label="Main"
-        >
-          {navItems.map((item) => (
+        <div className="hidden items-center gap-4 md:flex xl:gap-6">
+          <nav
+            className="flex items-center gap-4 text-xs leading-[1.5] xl:gap-6 xl:text-base"
+            aria-label="Main"
+          >
+            {navItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                target={"external" in item && item.external ? "_blank" : undefined}
+                rel={
+                  "external" in item && item.external
+                    ? "noopener noreferrer"
+                    : undefined
+                }
+                className={
+                  "emphasized" in item && item.emphasized
+                    ? "font-bold"
+                    : "font-normal"
+                }
+              >
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+
+          <div className="flex items-center gap-2">
             <Link
-              key={item.href}
-              href={item.href}
-              target={"external" in item && item.external ? "_blank" : undefined}
-              rel={
-                "external" in item && item.external
-                  ? "noopener noreferrer"
-                  : undefined
-              }
-              className={
-                "emphasized" in item && item.emphasized
-                  ? "font-bold"
-                  : "font-normal"
-              }
+              href={linkedInHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
             >
-              {item.label}
+              <IconImage
+                src={images.icons.linkedinFooter}
+                width={24}
+                height={24}
+                className={`size-6 ${useSolidStyles ? "invert" : ""}`}
+              />
             </Link>
-          ))}
-        </nav>
+            <Link
+              href={githubHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+            >
+              <IconImage
+                src={images.icons.githubFooter}
+                width={24}
+                height={24}
+                className={`size-6 ${useSolidStyles ? "invert" : ""}`}
+              />
+            </Link>
+          </div>
+        </div>
 
         <button
           type="button"
