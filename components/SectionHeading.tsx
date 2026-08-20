@@ -1,5 +1,5 @@
-import Link from "next/link";
 import { IconImage } from "@/components/IconImage";
+import { PillLink } from "@/components/PillLink";
 import { plusJakartaItalic } from "@/lib/fonts";
 import { images } from "@/lib/images";
 
@@ -49,20 +49,9 @@ export function SectionHeading({
       </div>
 
       {viewAllHref ? (
-        <Link
-          href={viewAllHref}
-          className={`${plusJakartaItalic.className} group inline-flex items-end gap-0.5 border-b border-accent text-xs font-bold leading-[1.5] text-accent hover:border-transparent md:text-base xl:self-start`}
-        >
+        <PillLink href={viewAllHref} className="xl:self-start">
           View All Work
-          <span className="inline-flex transition-transform duration-300 ease-in-out group-hover:translate-x-1 group-focus-visible:translate-x-1">
-            <IconImage
-              src={images.icons.viewAllArrow}
-              width={16}
-              height={16}
-              className="rotate-90 md:h-[22px] md:w-[22px]"
-            />
-          </span>
-        </Link>
+        </PillLink>
       ) : null}
     </div>
   );

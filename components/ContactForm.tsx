@@ -3,9 +3,7 @@
 import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
 import { useRef, useState } from "react";
 import type { FormEvent } from "react";
-import { IconImage } from "@/components/IconImage";
-import { plusJakartaItalic } from "@/lib/fonts";
-import { images } from "@/lib/images";
+import { PillButton } from "@/components/PillButton";
 import { CONTACT_HONEYPOT_FIELD } from "@/lib/contactHoneypot";
 
 const turnstileSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
@@ -161,20 +159,9 @@ export function ContactForm({ className }: ContactFormProps) {
       </div>
 
       <div className="flex w-full flex-col items-end gap-2 xl:items-start">
-        <button
-          type="submit"
-          disabled={isSubmitting}
-          className={`${plusJakartaItalic.className} inline-flex items-center gap-1 bg-accent py-0.5 pl-3 pr-2 text-base font-bold leading-[1.5] text-background disabled:cursor-not-allowed disabled:opacity-50 md:gap-2 md:py-1 md:pl-4 md:pr-2 md:text-2xl`}
-        >
+        <PillButton type="submit" disabled={isSubmitting}>
           {isSubmitting ? "Sending…" : "Submit"}
-          <IconImage
-            src={images.icons.contactArrowUp}
-            width={24}
-            height={24}
-            className="size-6 shrink-0 md:size-[30px]"
-            alt=""
-          />
-        </button>
+        </PillButton>
 
         {status === "success" ? (
           <p

@@ -39,3 +39,27 @@ body {
   background: var(--background);
   color: var(--text);
 }
+
+.bg-pill-link {
+  position: relative;
+  background: linear-gradient(
+    87deg,
+    var(--sub-accent-50) 0.52%,
+    var(--accent) 99.48%
+  );
+}
+
+.bg-pill-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background-color: var(--accent);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.bg-pill-link:not(:disabled):hover::after,
+.bg-pill-link:not(:disabled):focus-visible::after {
+  opacity: 1;
+}
