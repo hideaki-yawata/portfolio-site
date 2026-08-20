@@ -10,11 +10,16 @@ export type MicroCMSWorkCategory = {
   name: string;
 };
 
+export type MicroCMSWorkType = {
+  name: string;
+};
+
 export type MicroCMSWorkItem = {
   title: string;
   thumbnail: MicroCMSImage;
   url: string;
   category: MicroCMSWorkCategory[];
+  type: MicroCMSWorkType;
 } & MicroCMSListContent;
 
 export type WebDesign = MicroCMSWorkItem;
@@ -47,8 +52,7 @@ export function toPhotoCategories(
       const urls = block.image.map((img) => img.url);
       return {
         title: block.heading,
-        images:
-          maxImages !== undefined ? urls.slice(0, maxImages) : urls,
+        images: maxImages !== undefined ? urls.slice(0, maxImages) : urls,
       };
     }),
   );
