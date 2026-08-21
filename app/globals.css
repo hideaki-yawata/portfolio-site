@@ -18,6 +18,14 @@
   /* Category (work tags, etc.) */
   --category-1: #21759b;
   --category-2: #2b2c30;
+  /* Fixed header height (matches SiteHeader h-12 / xl:h-[60px]) */
+  --site-header-height: 3rem;
+}
+
+@media (min-width: 1280px) {
+  :root {
+    --site-header-height: 3.75rem;
+  }
 }
 
 @theme inline {
@@ -38,6 +46,10 @@
 body {
   background: var(--background);
   color: var(--text);
+}
+
+html {
+  scroll-padding-top: var(--site-header-height);
 }
 
 .bg-pill-link {
