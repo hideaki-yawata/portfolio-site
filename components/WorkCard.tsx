@@ -45,7 +45,7 @@ export function WorkCard({ item }: WorkCardProps) {
           {item.category.map((categoryItem) => (
             <li
               key={categoryItem.name}
-              className={`border px-1 text-xs font-normal leading-[1.5] ${categoryStyleMap[categoryItem.name] ?? "border-text text-text"}`}
+              className={`border px-1 text-xs font-medium leading-[1.5] ${categoryStyleMap[categoryItem.name] ?? "border-text text-text"}`}
             >
               {categoryItem.name}
             </li>
