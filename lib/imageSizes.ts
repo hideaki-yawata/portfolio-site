@@ -3,7 +3,7 @@ export const responsiveHeroFillSizes = {
   mobile: "(max-width: 767px) 100vw, 0px",
   tablet:
     "(max-width: 767px) 0px, (max-width: 1279px) 100vw, 0px",
-  desktop: "(max-width: 1279px) 0px, 33vw",
+  desktop: "(max-width: 1279px) 0px, 50vw",
 } as const;
 
 export const subPageHeroFillSizes = {

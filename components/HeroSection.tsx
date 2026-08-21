@@ -169,12 +169,6 @@ export function HeroSection() {
         imageSrc={images.heroWebDevelopment}
         href="#web-development"
       />
-      <HeroPanel
-        title="PHOTOGRAPHY"
-        description="I photograph essential visual assets for websites, including spaces and products."
-        imageSrc={images.heroPhotography}
-        href="#photography"
-      />
     </section>
   );
 }
