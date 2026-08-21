@@ -21,7 +21,9 @@ export function SectionHeading({
   const alignmentClass = alignEnd ? "items-end xl:items-start" : "items-start";
 
   return (
-    <div className={`flex w-full flex-col gap-2 ${alignmentClass}`}>
+    <div
+      className={`flex w-full flex-col ${viewAllHref ? "gap-4" : "gap-2"} ${alignmentClass}`}
+    >
       <div className="flex w-full flex-col gap-4 md:gap-6">
         <div className="flex items-start gap-4 md:items-end">
           <div className="relative flex shrink-0 items-center gap-2.5">
