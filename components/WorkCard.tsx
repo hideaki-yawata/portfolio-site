@@ -14,7 +14,7 @@ const categoryStyleMap: Record<string, string> = {
 };
 
 export function WorkCard({ item }: WorkCardProps) {
-  const thumbnailClassName = "relative aspect-[64/35] w-full overflow-hidden";
+  const thumbnailClassName = "relative aspect-[384/240] w-full overflow-hidden";
 
   return (
     <a
