@@ -61,7 +61,7 @@ export function MobileNavMenu({ open, onClose }: MobileNavMenuProps) {
 
       <div className="flex h-full flex-col items-center justify-center gap-12">
         <nav
-          className="flex flex-col items-center gap-12 text-2xl leading-[1.5] text-text"
+          className="flex flex-col items-center gap-12 text-2xl font-medium leading-[1.5] text-text"
           aria-label="Main"
         >
           {navItems.map((item) => (
@@ -75,11 +75,6 @@ export function MobileNavMenu({ open, onClose }: MobileNavMenuProps) {
                   : undefined
               }
               onClick={onClose}
-              className={
-                "emphasized" in item && item.emphasized
-                  ? "font-bold"
-                  : "font-normal"
-              }
             >
               {item.label}
             </Link>

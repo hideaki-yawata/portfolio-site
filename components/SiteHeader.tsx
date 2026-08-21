@@ -45,7 +45,7 @@ export function SiteHeader({ solid = false }: SiteHeaderProps) {
 
         <div className="hidden items-center gap-4 md:flex xl:gap-6">
           <nav
-            className="flex items-center gap-4 text-xs leading-[1.5] xl:gap-6 xl:text-base"
+            className="flex items-center gap-4 text-xs font-medium leading-[1.5] xl:gap-6 xl:text-base"
             aria-label="Main"
           >
             {navItems.map((item) => (
@@ -57,11 +57,6 @@ export function SiteHeader({ solid = false }: SiteHeaderProps) {
                   "external" in item && item.external
                     ? "noopener noreferrer"
                     : undefined
-                }
-                className={
-                  "emphasized" in item && item.emphasized
-                    ? "font-bold"
-                    : "font-normal"
                 }
               >
                 {item.label}

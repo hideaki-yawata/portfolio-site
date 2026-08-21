@@ -32,9 +32,5 @@ export const navItems = [
   { label: "Web Design", href: "/#web-design" },
   { label: "Photography", href: "/photography" },
   { label: "Background", href: "/#background" },
-  {
-    label: "Contact",
-    href: "/#contact",
-    emphasized: true,
-  },
+  { label: "Contact", href: "/#contact" },
 ] as const;
