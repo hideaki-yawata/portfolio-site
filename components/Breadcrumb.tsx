@@ -13,7 +13,10 @@ export function Breadcrumb({ currentMobile, currentTablet }: BreadcrumbProps) {
       aria-label="Breadcrumb"
       className="flex items-center gap-1 text-xs leading-[1.5] md:text-base"
     >
-      <Link href="/" className="shrink-0 font-normal text-accent">
+      <Link
+        href="/"
+        className="shrink-0 border-b border-accent font-medium text-accent hover:border-transparent"
+      >
         Home
       </Link>
       <IconImage
