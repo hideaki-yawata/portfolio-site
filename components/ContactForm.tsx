@@ -1,9 +1,10 @@
 "use client";
 
-import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
+import { type TurnstileInstance } from "@marsidev/react-turnstile";
 import { useRef, useState } from "react";
 import type { FormEvent } from "react";
 import { PillButton } from "@/components/PillButton";
+import { TurnstileField } from "@/components/TurnstileField";
 import { CONTACT_HONEYPOT_FIELD } from "@/lib/contactHoneypot";
 
 const turnstileSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
@@ -181,10 +182,9 @@ export function ContactForm({ className }: ContactFormProps) {
         ) : null}
 
         {turnstileSiteKey ? (
-          <Turnstile
+          <TurnstileField
             ref={turnstileRef}
             siteKey={turnstileSiteKey}
-            options={{ action: "contact", theme: "light" }}
             onSuccess={setTurnstileToken}
             onExpire={() => setTurnstileToken(null)}
             onError={() => {

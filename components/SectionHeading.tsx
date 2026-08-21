@@ -1,6 +1,5 @@
 import { IconImage } from "@/components/IconImage";
 import { PillLink } from "@/components/PillLink";
-import { plusJakartaItalic } from "@/lib/fonts";
 import { images } from "@/lib/images";
 
 type SectionHeadingProps = {
@@ -29,13 +28,17 @@ export function SectionHeading({
           <div className="relative flex shrink-0 items-center gap-2.5">
             <IconImage
               src={images.icons.sectionHighlight}
+              width={41}
+              height={22}
+              className="absolute -left-1 top-0 md:hidden"
+            />
+            <IconImage
+              src={images.icons.sectionHighlight}
               width={60}
               height={32}
-              className="absolute -left-1 top-0 h-[22px] w-[41px] md:-left-2 md:h-[32px] md:w-[60px]"
+              className="absolute -left-2 top-0 hidden md:block"
             />
-            <span
-              className={`${plusJakartaItalic.className} relative text-[36px] font-bold leading-none text-accent md:text-[48px]`}
-            >
+            <span className="relative text-[36px] font-bold italic leading-none text-accent md:text-[48px]">
               {number}
             </span>
           </div>

@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { IconImage } from "@/components/IconImage";
-import { plusJakartaItalic } from "@/lib/fonts";
 import { images } from "@/lib/images";
 
 type PillLinkProps = {
@@ -21,7 +20,7 @@ export function PillLink({
   return (
     <Link
       href={href}
-      className={`${plusJakartaItalic.className} bg-pill-link relative inline-flex items-center gap-1 rounded-2xl pb-[3px] pt-0.5 text-xs font-bold italic leading-[1.5] text-background md:text-base ${
+      className={`bg-pill-link relative inline-flex items-center gap-1 rounded-2xl pb-[3px] pt-0.5 text-xs font-bold italic leading-[1.5] text-background md:text-base ${
         isBack ? "pl-2 pr-3" : "pl-3 pr-2"
       } ${className}`}
     >
