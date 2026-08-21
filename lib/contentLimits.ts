@@ -2,7 +2,7 @@
 export const HOME_WEB_DESIGN_LIMIT = 3;
 
 /** microCMS list limit — home Web Development section */
-export const HOME_WEB_DEVELOPMENT_LIMIT = 3;
+export const HOME_WEB_DEVELOPMENT_LIMIT = 6;
 
 /**
  * Photography API list entries on the home page.
