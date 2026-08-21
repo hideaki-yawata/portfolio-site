@@ -28,8 +28,8 @@ export const linkedInHref =
 export const githubHref = "https://github.com/hideaki-yawata";
 
 export const navItems = [
-  { label: "Web Design", href: "/#web-design" },
   { label: "Web Development", href: "/web-development" },
+  { label: "Web Design", href: "/#web-design" },
   { label: "Photography", href: "/photography" },
   { label: "Background", href: "/#background" },
   {

@@ -23,14 +23,14 @@ import {
 import { timelineEntries } from "@/lib/topPageData";
 
 export default async function Home() {
-  const [webDesignData, webDevelopmentData, photographyData] =
+  const [webDevelopmentData, webDesignData, photographyData] =
     await Promise.all([
-      getWebDesignList({
-        limit: HOME_WEB_DESIGN_LIMIT,
-        depth: MICROCMS_CATEGORY_DEPTH,
-      }),
       getWebDevelopmentList({
         limit: HOME_WEB_DEVELOPMENT_LIMIT,
+        depth: MICROCMS_CATEGORY_DEPTH,
+      }),
+      getWebDesignList({
+        limit: HOME_WEB_DESIGN_LIMIT,
         depth: MICROCMS_CATEGORY_DEPTH,
       }),
       getPhotographyList({ limit: HOME_PHOTOGRAPHY_ENTRY_LIMIT }),
@@ -48,31 +48,12 @@ export default async function Home() {
       </div>
 
       <section
-        id="web-design"
+        id="web-development"
         className="flex justify-center bg-background px-4 py-8 xl:px-[120px] xl:py-16"
       >
         <div className="flex w-full max-w-[1200px] flex-col gap-6 md:gap-8">
           <SectionHeading
             number="01"
-            title="Web Design"
-            description="I deliver design data optimized for Design-to-Code."
-            alignEnd
-          />
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {webDesignData.contents.map((item) => (
-              <WorkCard key={item.id} item={item} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section
-        id="web-development"
-        className="flex justify-center bg-sub-background px-4 py-8 xl:px-[120px] xl:py-16"
-      >
-        <div className="flex w-full max-w-[1200px] flex-col gap-6 md:gap-8">
-          <SectionHeading
-            number="02"
             title="Web Development"
             description="I handle coding, CMS integration, maintenance, and operations."
             viewAllHref="/web-development"
@@ -80,6 +61,25 @@ export default async function Home() {
           />
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
             {webDevelopmentData.contents.map((item) => (
+              <WorkCard key={item.id} item={item} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="web-design"
+        className="flex justify-center bg-sub-background px-4 py-8 xl:px-[120px] xl:py-16"
+      >
+        <div className="flex w-full max-w-[1200px] flex-col gap-6 md:gap-8">
+          <SectionHeading
+            number="02"
+            title="Web Design"
+            description="I deliver design data optimized for Design-to-Code."
+            alignEnd
+          />
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+            {webDesignData.contents.map((item) => (
               <WorkCard key={item.id} item={item} />
             ))}
           </div>

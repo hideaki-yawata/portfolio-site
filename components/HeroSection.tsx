@@ -157,17 +157,17 @@ export function HeroSection() {
   return (
     <section className="flex h-screen w-full flex-col xl:flex-row">
       <HeroPanel
-        title="WEB DESIGN"
-        description="I deliver design data optimized for Design-to-Code."
-        imageSrc={images.heroWebDesign}
-        href="#web-design"
-      />
-      <HeroPanel
         title="WEB DEVELOPMENT"
         titleLines={["WEB ", "DEVELOPMENT"]}
         description="I handle coding, CMS integration, maintenance, and operations."
         imageSrc={images.heroWebDevelopment}
         href="#web-development"
+      />
+      <HeroPanel
+        title="WEB DESIGN"
+        description="I deliver design data optimized for Design-to-Code."
+        imageSrc={images.heroWebDesign}
+        href="#web-design"
       />
     </section>
   );
