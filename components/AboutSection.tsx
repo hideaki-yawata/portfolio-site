@@ -8,7 +8,7 @@ type AboutSectionProps = {
 
 export function AboutSection({ paragraphs, entries }: AboutSectionProps) {
   return (
-    <section id="about" className="flex justify-center px-6 py-12 md:py-16 xl:px-0 xl:py-16">
+    <section id="about" className="flex justify-center px-6 py-8 md:py-8 xl:px-0 xl:py-16">
       <div className="flex w-full max-w-[1200px] flex-col gap-8 md:gap-16 xl:max-w-none">
         <div className="flex flex-col gap-4 text-text md:gap-6 xl:px-32">
           <h2 className="text-2xl font-bold leading-[1.2] md:text-[32px]">

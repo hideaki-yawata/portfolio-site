@@ -52,7 +52,7 @@ export default async function Home() {
       <main className="flex flex-col">
         <section
           id="work"
-          className="flex justify-center px-6 py-12 md:py-16 xl:px-12 xl:pb-16 xl:pt-16"
+          className="flex justify-center px-6 py-8 md:py-8 xl:px-12 xl:pb-16 xl:pt-16"
         >
           <div className="flex w-full max-w-[1200px] flex-col gap-4 md:gap-6 xl:max-w-none">
             <SectionHeading
@@ -70,7 +70,7 @@ export default async function Home() {
 
         <section
           id="photography"
-          className="flex justify-center px-6 py-12 md:py-16 xl:px-12 xl:py-16"
+          className="flex justify-center px-6 py-8 md:py-8 xl:px-12 xl:py-16"
         >
           <div className="flex w-full max-w-[1200px] flex-col gap-4 md:gap-6 xl:max-w-none">
             <SectionHeading

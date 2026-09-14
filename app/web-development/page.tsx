@@ -34,7 +34,7 @@ export default async function WebDevelopmentPage() {
       </div>
 
       <main className="flex flex-col">
-        <div className="flex flex-col items-center px-6 pb-6 pt-12 md:pb-6 md:pt-16 xl:px-12 xl:pb-6 xl:pt-16">
+        <div className="flex flex-col items-center px-6 pb-6 pt-8 md:pb-6 md:pt-8 xl:px-12 xl:pb-6 xl:pt-16">
           <div className="flex w-full max-w-[1200px] flex-col items-center gap-8 md:gap-12 xl:max-w-none xl:gap-12">
             <h1 className="hidden w-full text-[32px] font-bold leading-[1.2] text-text xl:block">
               Web Development / Design
