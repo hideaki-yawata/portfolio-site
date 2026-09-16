@@ -32,7 +32,7 @@ export function PhotographyHomeGrid({ categories }: PhotographyHomeGridProps) {
 
   return (
     <>
-      <div className="grid grid-cols-2 gap-4 md:grid-cols-4 xl:gap-6">
+      <div className="grid grid-cols-2 gap-2 md:grid-cols-4">
         {items.map((item, index) => (
           <button
             key={`${item.src}-${index}`}

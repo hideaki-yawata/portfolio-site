@@ -20,7 +20,7 @@ export function PhotoCategoryGallery({
     : "text-xl font-bold leading-[1.5] text-text md:text-2xl";
 
   const gridClassName = subPage
-    ? "grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-4 xl:grid-cols-4 xl:gap-6"
+    ? "grid grid-cols-2 gap-2 md:grid-cols-4 xl:grid-cols-4"
     : "grid grid-cols-2 gap-2";
 
   const imageWrapperClassName =
