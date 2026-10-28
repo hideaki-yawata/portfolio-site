@@ -13,9 +13,9 @@ export const timelineEntries: TimelineEntry[] = [
       "Completed the German B2 course at VICTORIA | Academy of Languages in Berlin.",
   },
   {
-    period: "2020-Present",
+    period: "2020-2025",
     description:
-      "Started a career as a freelance web engineer. Involved in the development and maintenance of numerous WordPress sites.",
+      "Worked as a freelance web developer, developing and maintaining numerous WordPress websites.",
   },
   {
     period: "2013-2020",
